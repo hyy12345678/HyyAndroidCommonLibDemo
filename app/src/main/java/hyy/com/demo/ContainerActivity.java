@@ -1,54 +1,47 @@
 package hyy.com.demo;
 
-import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.Button;
 
 import hyy.com.demo.constants.Constants;
 import hyy.com.dropdownlistviewdemo.R;
 
-
-public class MainActivity extends ActionBarActivity {
-
-    Button btnDropDownList;
+public class ContainerActivity extends ActionBarActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_container);
 
-        init();
-        initListener();
+        int type = getIntent().getIntExtra("type", -1);
+
+        initFragment(type);
     }
 
-    private void initListener() {
-        btnDropDownList.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, ContainerActivity.class);
+    private void initFragment(int type) {
 
-                intent.putExtra("type", Constants.TYPE_DROP_DOWN_LIST);
-                startActivity(intent);
-            }
-        });
-    }
+        switch (type) {
+            case Constants.TYPE_DROP_DOWN_LIST:
 
-    private void init() {
+                Fragment fragment = DropDownListFragment.getInstance();
+                getSupportFragmentManager().beginTransaction().add(R.id.container, fragment).commit();
 
-        btnDropDownList = (Button) findViewById(R.id.btn_drop_down_list);
 
+                break;
+            case Constants.TYPE_AUTO_EXT_VIEW_GROUP:
+
+                break;
+        }
 
     }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
+        getMenuInflater().inflate(R.menu.menu_container, menu);
         return true;
     }
 

@@ -8,7 +8,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.ListView;
 import android.widget.Toast;
 
 import com.hyy.android.common.view.DropDownListView;
@@ -24,7 +23,7 @@ import hyy.com.dropdownlistviewdemo.R;
 /**
  * A placeholder fragment containing a simple view.
  */
-public class MainActivityFragment extends Fragment {
+public class DropDownListFragment extends Fragment {
 
     private LinkedList<String> listItems = null;
     private DropDownListView listView = null;
@@ -37,7 +36,13 @@ public class MainActivityFragment extends Fragment {
     public static final int MORE_DATA_MAX_COUNT = 3;
     public int moreDataCount = 0;
 
-    public MainActivityFragment() {
+
+    public static Fragment getInstance(){
+        return new DropDownListFragment();
+    }
+
+
+    public DropDownListFragment() {
     }
 
     @Override
@@ -46,7 +51,6 @@ public class MainActivityFragment extends Fragment {
 
         View view = inflater.inflate(R.layout.fragment_main, container, false);
 
-        //listView = (DropDownListView)view.findViewById(R.id.list_view);
         listView = (DropDownListView) view.findViewById(R.id.list_view);
 
         return view;
