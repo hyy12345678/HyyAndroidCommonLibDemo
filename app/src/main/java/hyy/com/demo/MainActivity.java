@@ -15,6 +15,7 @@ import hyy.com.dropdownlistviewdemo.R;
 public class MainActivity extends ActionBarActivity {
 
     Button btnDropDownList;
+    Button btnAutoExtViewgroup;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,11 +36,22 @@ public class MainActivity extends ActionBarActivity {
                 startActivity(intent);
             }
         });
+
+        btnAutoExtViewgroup.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, ContainerActivity.class);
+
+                intent.putExtra("type", Constants.TYPE_AUTO_EXT_VIEW_GROUP);
+                startActivity(intent);
+            }
+        });
     }
 
     private void init() {
 
         btnDropDownList = (Button) findViewById(R.id.btn_drop_down_list);
+        btnAutoExtViewgroup = (Button)findViewById(R.id.btn_auto_extends_viewgroup);
 
 
     }

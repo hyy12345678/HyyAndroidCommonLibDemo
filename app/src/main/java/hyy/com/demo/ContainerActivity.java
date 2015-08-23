@@ -22,19 +22,24 @@ public class ContainerActivity extends ActionBarActivity {
     }
 
     private void initFragment(int type) {
+        Fragment fragment = null;
 
         switch (type) {
             case Constants.TYPE_DROP_DOWN_LIST:
 
-                Fragment fragment = DropDownListFragment.getInstance();
-                getSupportFragmentManager().beginTransaction().add(R.id.container, fragment).commit();
-
+                fragment = DropDownListFragment.getInstance();
 
                 break;
             case Constants.TYPE_AUTO_EXT_VIEW_GROUP:
+                fragment = AutoExtVGFragment.newInstance();
 
                 break;
         }
+
+        if(null != fragment){
+            getSupportFragmentManager().beginTransaction().replace(R.id.container, fragment).commit();
+        }
+
 
     }
 
