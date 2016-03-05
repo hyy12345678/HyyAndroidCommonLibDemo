@@ -16,6 +16,7 @@ public class MainActivity extends ActionBarActivity {
 
     Button btnDropDownList;
     Button btnAutoExtViewgroup;
+    Button btnHyyDatePicker;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,12 +47,23 @@ public class MainActivity extends ActionBarActivity {
                 startActivity(intent);
             }
         });
+
+        btnHyyDatePicker.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, ContainerActivity.class);
+
+                intent.putExtra("type", Constants.TYPE_HYY_DATE_PICKER);
+                startActivity(intent);
+            }
+        });
     }
 
     private void init() {
 
         btnDropDownList = (Button) findViewById(R.id.btn_drop_down_list);
         btnAutoExtViewgroup = (Button)findViewById(R.id.btn_auto_extends_viewgroup);
+        btnHyyDatePicker = (Button) findViewById(R.id.btn_hyy_date_picker);
 
 
     }

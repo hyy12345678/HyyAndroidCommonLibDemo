@@ -10,8 +10,7 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
-            <option value="$PROJECT_DIR$/libraries" />
-            <option value="$PROJECT_DIR$/libraries/hyy-android-common-lib" />
+            <option value="$PROJECT_DIR$/hyy-android-common-lib" />
           </set>
         </option>
       </GradleProjectSettings>

@@ -1,1 +1,1 @@
-include ':app', ':libraries:hyy-android-common-lib'
+include ':app', ':hyy-android-common-lib'

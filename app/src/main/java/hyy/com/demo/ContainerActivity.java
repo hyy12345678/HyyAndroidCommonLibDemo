@@ -34,6 +34,13 @@ public class ContainerActivity extends ActionBarActivity {
                 fragment = AutoExtVGFragment.newInstance();
 
                 break;
+            case Constants.TYPE_HYY_DATE_PICKER:
+                fragment = HyyDatePickerFragment.getInstance();
+
+                break;
+
+            default:
+                break;
         }
 
         if(null != fragment){
