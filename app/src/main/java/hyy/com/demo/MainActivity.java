@@ -3,25 +3,33 @@ package hyy.com.demo;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
+import butterknife.Bind;
+import butterknife.ButterKnife;
 import hyy.com.demo.constants.Constants;
 import hyy.com.dropdownlistviewdemo.R;
 
 
-public class MainActivity extends ActionBarActivity {
+public class MainActivity extends AppCompatActivity {
 
+    @Bind(R.id.btn_drop_down_list)
     Button btnDropDownList;
+    @Bind(R.id.btn_auto_extends_viewgroup)
     Button btnAutoExtViewgroup;
+    @Bind(R.id.btn_hyy_date_picker)
     Button btnHyyDatePicker;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        ButterKnife.bind(this);
 
         init();
         initListener();
@@ -60,11 +68,6 @@ public class MainActivity extends ActionBarActivity {
     }
 
     private void init() {
-
-        btnDropDownList = (Button) findViewById(R.id.btn_drop_down_list);
-        btnAutoExtViewgroup = (Button)findViewById(R.id.btn_auto_extends_viewgroup);
-        btnHyyDatePicker = (Button) findViewById(R.id.btn_hyy_date_picker);
-
 
     }
 

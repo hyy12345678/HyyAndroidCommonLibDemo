@@ -3,13 +3,18 @@ package hyy.com.demo;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 
 import hyy.com.demo.constants.Constants;
+import hyy.com.demo.fragments.AdViewFragment;
+import hyy.com.demo.fragments.AutoExtVGFragment;
+import hyy.com.demo.fragments.DropDownListFragment;
+import hyy.com.demo.fragments.HyyDatePickerFragment;
 import hyy.com.dropdownlistviewdemo.R;
 
-public class ContainerActivity extends ActionBarActivity {
+public class ContainerActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +41,11 @@ public class ContainerActivity extends ActionBarActivity {
                 break;
             case Constants.TYPE_HYY_DATE_PICKER:
                 fragment = HyyDatePickerFragment.getInstance();
+
+                break;
+
+            case Constants.TYPE_AD_VIEW:
+                fragment = AdViewFragment.newInstance();
 
                 break;
 

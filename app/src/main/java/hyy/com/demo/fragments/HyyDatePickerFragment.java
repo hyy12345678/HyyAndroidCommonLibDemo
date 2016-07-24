@@ -1,4 +1,4 @@
-package hyy.com.demo;
+package hyy.com.demo.fragments;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;

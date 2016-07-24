@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="AdViewLayout">
+        <attr name="ads01Drawable" format="color|reference" />
+        <attr name="ads02Drawable" format="color|reference" />
+        <attr name="ads03Drawable" format="color|reference" />
+        <attr name="ads04Drawable" format="color|reference" />
+        <attr name="ads05Drawable" format="color|reference" />
+        <attr name="indicatorSelectedDrawable" format="color|reference"></attr>
+        <attr name="indicatorUnSelectedDrawable" format="color|reference"></attr>
+
+    </declare-styleable>
+</resources>

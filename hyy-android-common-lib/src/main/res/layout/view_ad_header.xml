@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:id="@+id/frameLayoutAd"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/firstpage_ad_height" >
+
+        <com.neusoft.si.base.ui.view.autoscrollview.AutoScrollViewPager
+            android:id="@+id/viewPagerAutoScroll"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:id="@+id/linearLayoutIndicator"
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/firstpage_ad_indicator_height"
+                android:layout_alignParentBottom="true"
+                android:gravity="right|center_vertical"
+                android:orientation="horizontal"
+                android:paddingRight="@dimen/firstpage_ad_indicator_padding" >
+            </LinearLayout>
+        </RelativeLayout>
+    </FrameLayout>
+
+
+
+</LinearLayout>

@@ -1,4 +1,4 @@
-package hyy.com.demo;
+package hyy.com.demo.fragments;
 
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -103,7 +103,7 @@ public class DropDownListFragment extends Fragment {
             try {
                 Thread.sleep(1000);
             } catch (InterruptedException e) {
-                ;
+
             }
             return mStrings;
         }
@@ -130,7 +130,7 @@ public class DropDownListFragment extends Fragment {
                 }
 
                 // should call onBottomComplete function of DropDownListView at end of on bottom complete.
-                //listView.onBottomComplete();
+                listView.onBottomComplete();
             }
 
             super.onPostExecute(result);

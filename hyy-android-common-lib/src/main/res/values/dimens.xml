@@ -8,4 +8,12 @@
     <dimen name="drop_down_list_footer_progress_bar_height">36dp</dimen>
     <dimen name="drop_down_list_footer_button_margin_left">8dp</dimen>
     <dimen name="drop_down_list_footer_button_height">48dp</dimen>
+
+
+
+    <!-- ads -->
+    <dimen name="firstpage_ad_height">180dp</dimen>
+    <dimen name="firstpage_ad_indicator_height">20dp</dimen>
+    <dimen name="firstpage_ad_indicator_padding">10dp</dimen>
+
 </resources>
