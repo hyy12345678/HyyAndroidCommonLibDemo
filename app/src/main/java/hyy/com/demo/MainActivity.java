@@ -23,6 +23,9 @@ public class MainActivity extends AppCompatActivity {
     Button btnAutoExtViewgroup;
     @Bind(R.id.btn_hyy_date_picker)
     Button btnHyyDatePicker;
+    @Bind(R.id.btn_ad_view)
+    Button btnAdView;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,6 +65,16 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent(MainActivity.this, ContainerActivity.class);
 
                 intent.putExtra("type", Constants.TYPE_HYY_DATE_PICKER);
+                startActivity(intent);
+            }
+        });
+
+        btnAdView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, ContainerActivity.class);
+
+                intent.putExtra("type", Constants.TYPE_AD_VIEW);
                 startActivity(intent);
             }
         });

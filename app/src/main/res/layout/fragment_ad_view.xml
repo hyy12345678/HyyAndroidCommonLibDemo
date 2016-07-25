@@ -1,18 +1,25 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="hyy.com.demo.fragments.AdViewFragment">
+    android:layout_height="match_parent">
+    
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <com.hyy.android.common.view.AdViewLayout
-        android:id="@+id/layoutAd"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:ads01Drawable="@drawable/banner_firstpage_family"
-        app:ads02Drawable="@drawable/banner_firstpage_family"
-        app:ads03Drawable="@drawable/banner_firstpage_family"
-        app:indicatorSelectedDrawable="@drawable/dot_selected"
-        app:indicatorUnSelectedDrawable="@drawable/dot_unselected"/>
+        <com.hyy.android.common.view.AdViewLayout
+            android:id="@+id/layoutAd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:ads01Drawable="@drawable/banner_firstpage_family"
+            app:ads02Drawable="@drawable/banner_firstpage_family"
+            app:ads03Drawable="@drawable/banner_firstpage_family"
+            app:indicatorSelectedDrawable="@drawable/dot_selected"
+            app:indicatorUnSelectedDrawable="@drawable/dot_unselected"/>
 
-</RelativeLayout>
+    </RelativeLayout>
+
+
+
+</FrameLayout>

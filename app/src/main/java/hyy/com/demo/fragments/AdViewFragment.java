@@ -50,9 +50,8 @@ public class AdViewFragment extends Fragment {
         // Required empty public constructor
     }
 
-    public static AdViewFragment newInstance(){
-        AdViewFragment adViewFragment = new AdViewFragment();
-        return adViewFragment;
+    public static Fragment newInstance(){
+        return  new AdViewFragment();
     }
 
 
@@ -62,7 +61,7 @@ public class AdViewFragment extends Fragment {
         // Inflate the layout for this fragment
 
         if (mView == null) {
-            View mView = inflater.inflate(R.layout.fragment_ad_view, container, false);
+            mView = inflater.inflate(R.layout.fragment_ad_view, container, false);
             ButterKnife.bind(this,mView);
             
             init();
@@ -95,7 +94,7 @@ public class AdViewFragment extends Fragment {
                 .showImageOnFail(R.drawable.ic_error)		// 设置图片加载或解码过程中发生错误显示的图片
                 .cacheInMemory(true)						// 设置下载的图片是否缓存在内存中
                 .cacheOnDisc(true)							// 设置下载的图片是否缓存在SD卡中
-                .displayer(new RoundedBitmapDisplayer(20))	// 设置成圆角图片
+                //.displayer(new RoundedBitmapDisplayer(20))	// 设置成圆角图片
                 .build();									// 创建配置过得DisplayImageOption对象
 
 

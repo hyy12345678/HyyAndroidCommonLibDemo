@@ -9,7 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/firstpage_ad_height" >
 
-        <com.neusoft.si.base.ui.view.autoscrollview.AutoScrollViewPager
+        <com.hyy.android.common.component.AutoScrollViewPager
             android:id="@+id/viewPagerAutoScroll"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
