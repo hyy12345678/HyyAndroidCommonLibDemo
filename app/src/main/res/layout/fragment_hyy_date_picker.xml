@@ -3,8 +3,7 @@
     xmlns:timepicker="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#000000"
-    tools:context="${relativePackage}.${activityClass}" >
+    android:background="#000000">
 
     <com.hyy.android.common.view.HyyTimePicker
         android:id="@+id/time_picker"
@@ -16,6 +15,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         timepicker:bgColor="@color/orange"
+        timepicker:useYear ="true"
+        timepicker:useMonth ="true"
+        timepicker:useDay ="true"
         android:layout_below="@id/time_picker"
         android:layout_marginTop="10dp" />
 
@@ -25,6 +27,14 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/date_picker"
         android:text="Show me the date"
+        android:layout_marginTop="10dp" />
+
+    <Button
+        android:id="@+id/btn_dialog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btn_show"
+        android:text="Pop dialog"
         android:layout_marginTop="10dp" />
 
 </RelativeLayout>

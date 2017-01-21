@@ -2,6 +2,9 @@
 <resources>
     <declare-styleable name="hyyDatePicker">
         <attr name="bgColor" format="color|reference" />
+        <attr name="useYear" format="boolean" />
+        <attr name="useMonth" format="boolean" />
+        <attr name="useDay" format="boolean" />
     </declare-styleable>
     
 </resources>
