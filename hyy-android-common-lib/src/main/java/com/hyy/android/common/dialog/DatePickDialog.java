@@ -2,6 +2,8 @@ package com.hyy.android.common.dialog;
 
 import android.app.Dialog;
 import android.content.Context;
+import android.graphics.drawable.Drawable;
+import android.support.v4.content.ContextCompat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup.LayoutParams;
@@ -12,6 +14,7 @@ import com.hyy.android.common.R;
 import com.hyy.android.common.view.HyyDatePicker;
 
 import java.util.Calendar;
+import java.util.Date;
 
 /**
  * Created by hyy on 2017/1/20.
@@ -24,7 +27,7 @@ public class DatePickDialog extends Dialog {
         int POSITIVE = 1;
         int NEGATIVE = 0;
 
-        void onClick(int YEAR,int MONTH,int DAY,int which);
+        void onClick(Calendar chooseCanlendar,int which);
     }
 
 
@@ -53,15 +56,25 @@ public class DatePickDialog extends Dialog {
         private boolean useYear;
         private boolean useMonth;
         private boolean useDay;
+        private Drawable titleBg;
+
 
         public Builder(Context context) {
             this.context = context;
         }
 
-        public Builder setInitDate(int  year,int month,int day) {
-            YEAR = year;
-            MONTH = month;
-            DAY = day;
+//        public Builder setInitDate(int  year,int month,int day) {
+//            YEAR = year;
+//            MONTH = month;
+//            DAY = day;
+//            return this;
+//        }
+
+
+        public Builder setInitDate(Calendar initCalendar) {
+            YEAR = initCalendar.get(Calendar.YEAR);
+            MONTH = initCalendar.get(Calendar.MONTH);
+            DAY = initCalendar.get(Calendar.DAY_OF_MONTH);
             return this;
         }
 
@@ -69,6 +82,12 @@ public class DatePickDialog extends Dialog {
             this.useYear = useYear;
             this.useMonth = useMonth;
             this.useDay = useDay;
+            return this;
+        }
+
+        public Builder setTitleBg(Drawable titleBgDrawable){
+
+            titleBg = titleBgDrawable;
             return this;
         }
 
@@ -150,7 +169,11 @@ public class DatePickDialog extends Dialog {
                     ((Button) layout.findViewById(R.id.positiveButton))
                             .setOnClickListener(new View.OnClickListener() {
                                 public void onClick(View v) {
-                                    positiveButtonClickListener.onClick(YEAR,MONTH,DAY,
+
+                                    Calendar ca = Calendar.getInstance();
+                                    ca.set(YEAR,MONTH,DAY);
+
+                                    positiveButtonClickListener.onClick(ca,
                                             OnDatePickDialogClickListener.POSITIVE);
                                     dialog.dismiss();
                                 }
@@ -169,7 +192,11 @@ public class DatePickDialog extends Dialog {
                     ((Button) layout.findViewById(R.id.negativeButton))
                             .setOnClickListener(new View.OnClickListener() {
                                 public void onClick(View v) {
-                                    negativeButtonClickListener.onClick(YEAR,MONTH,DAY,
+
+                                    Calendar ca = Calendar.getInstance();
+                                    ca.set(YEAR,MONTH,DAY);
+
+                                    negativeButtonClickListener.onClick(ca,
                                             OnDatePickDialogClickListener.NEGATIVE);
                                     dialog.dismiss();
                                 }
@@ -204,6 +231,12 @@ public class DatePickDialog extends Dialog {
             datePicker.setUseDay(useDay);
             datePicker.refreshYMD();
 
+
+            //set bg
+            if(null == titleBg){
+                titleBg =  ContextCompat.getDrawable(context,R.drawable.dialog_title_bg);
+            }
+            layout.findViewById(R.id.title).setBackgroundDrawable(titleBg);
 
             dialog.setContentView(layout);
             return dialog;

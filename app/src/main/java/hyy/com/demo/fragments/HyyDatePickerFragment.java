@@ -2,6 +2,7 @@ package hyy.com.demo.fragments;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.content.ContextCompat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -12,7 +13,11 @@ import android.widget.Toast;
 import com.hyy.android.common.dialog.DatePickDialog;
 import com.hyy.android.common.view.HyyDatePicker;
 
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 
 import hyy.com.dropdownlistviewdemo.R;
 
@@ -86,37 +91,51 @@ public class HyyDatePickerFragment extends Fragment {
         });
 
 
-
         btn_dialog.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                Calendar calendar = Calendar.getInstance();
-                int year = calendar.get(Calendar.YEAR);
-                final int month = calendar.get(Calendar.MONTH);
-                int day = calendar.get(Calendar.DAY_OF_MONTH);
 
-//                final int year = 2013;
-//                final int month = 7;
-//                final int day = 23;
+                String initStr = "2014-01-13";
+                Calendar calendar = Calendar.getInstance();
+                final DateFormat format1 = new SimpleDateFormat("yyyy-MM-dd");
+
+                try {
+
+                    Date initDate = format1.parse(initStr);
+                    calendar.setTime(initDate);
+
+                } catch (ParseException e) {
+                    e.printStackTrace();
+                }
+
 
                 DatePickDialog.Builder builder = new DatePickDialog.Builder(getActivity());
-                builder.setInitDate(year, month, day);
-                builder.setYMDDisplay(true,true,false);
+                builder.setTitleBg(ContextCompat.getDrawable(getActivity(), R.drawable.custom_dialog_title_bg));
+                builder.setInitDate(calendar);
+                builder.setYMDDisplay(true, true, true);
                 builder.setTitle("提示");
                 builder.setPositiveButton("确定",
                         new DatePickDialog.OnDatePickDialogClickListener() {
                             @Override
-                            public void onClick(int YEAR, int MONTH, int DAY ,int which) {
-                                Toast.makeText(getActivity(),"POSITIVE seleced date:"+YEAR+(MONTH+1)+DAY,Toast.LENGTH_SHORT).show();
+                            public void onClick(Calendar cale, int which) {
+
+                                Date date =cale.getTime();
+                                String dateStr=format1.format(date);
+
+                                Toast.makeText(getActivity(), "POSITIVE seleced date:" + dateStr, Toast.LENGTH_SHORT).show();
                             }
                         });
 
                 builder.setNegativeButton("取消",
                         new DatePickDialog.OnDatePickDialogClickListener() {
                             @Override
-                            public void onClick(int YEAR, int MONTH, int DAY ,int which) {
-                                Toast.makeText(getActivity(),"NEGATIVE seleced date:"+YEAR+(MONTH+1)+DAY,Toast.LENGTH_SHORT).show();
+                            public void onClick(Calendar cale, int which) {
+
+                                Date date =cale.getTime();
+                                String dateStr=format1.format(date);
+
+                                Toast.makeText(getActivity(), "NEGATIVE seleced date:" + dateStr, Toast.LENGTH_SHORT).show();
                             }
                         });
 
