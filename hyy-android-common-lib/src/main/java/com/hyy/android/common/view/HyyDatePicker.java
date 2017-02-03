@@ -69,8 +69,8 @@ public class HyyDatePicker extends RelativeLayout {
                 R.styleable.hyyDatePicker, defStyle, 0);
 
         // init bgColor
-        if (a.hasValue(R.styleable.hyyDatePicker_bgColor)) {
-            bgColor = a.getDrawable(R.styleable.hyyDatePicker_bgColor);
+        if (a.hasValue(R.styleable.hyyDatePicker_dpBgColor)) {
+            bgColor = a.getDrawable(R.styleable.hyyDatePicker_dpBgColor);
         }
 
         // init useYear
@@ -375,7 +375,7 @@ public class HyyDatePicker extends RelativeLayout {
     }
 
     /**
-     * 设置当前是否显示MONTH
+     * 设置当前是否显示DAY
      *
      * @param useDay
      */

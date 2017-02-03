@@ -6,6 +6,8 @@ import java.util.List;
 
 
 import android.content.Context;
+import android.content.res.TypedArray;
+import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -26,7 +28,20 @@ public class HyyTimePicker extends RelativeLayout
     PickerView hour_pv;
 	PickerView minute_pv;
 	PickerView second_pv;
-	
+
+
+	private OnTimeChangedListener timeChangedListener;
+
+	private int selectedHour;
+	private int selectedMinute;
+	private int selectedSecond;
+
+
+	boolean useHour;
+	boolean useMinute;
+	boolean useSecond;
+
+    Drawable bgColor;
 
 	public HyyTimePicker(Context context)
 	{
@@ -53,7 +68,32 @@ public class HyyTimePicker extends RelativeLayout
 
 	private void init(AttributeSet attrs, int defStyle) {
 		// TODO Auto-generated method stub
-		
+
+        // Load attributes
+        final TypedArray a = getContext().obtainStyledAttributes(attrs,
+                R.styleable.hyyTimePicker, defStyle, 0);
+
+        // init bgColor
+        if (a.hasValue(R.styleable.hyyTimePicker_tpBgColor)) {
+            bgColor = a.getDrawable(R.styleable.hyyTimePicker_tpBgColor);
+        }
+
+        // init useHour
+        if (a.hasValue(R.styleable.hyyTimePicker_useHour)) {
+            useHour = a.getBoolean(R.styleable.hyyTimePicker_useHour, true);
+        }
+
+        // init useMinute
+        if (a.hasValue(R.styleable.hyyTimePicker_useMinute)) {
+            useMinute = a.getBoolean(R.styleable.hyyTimePicker_useMinute, true);
+        }
+
+        // init useSecond
+        if (a.hasValue(R.styleable.hyyTimePicker_useSecond)) {
+            useSecond = a.getBoolean(R.styleable.hyyTimePicker_useSecond, true);
+        }
+
+
 		
 		initView();
 		initData();
@@ -69,6 +109,8 @@ public class HyyTimePicker extends RelativeLayout
 		hour_pv = (PickerView) innerView.findViewById(R.id.hour_pv);
 		minute_pv = (PickerView) innerView.findViewById(R.id.minute_pv);
 		second_pv = (PickerView) innerView.findViewById(R.id.second_pv);
+
+        refreshHMS();
 		
 		this.addView(innerView);
 	}
@@ -99,10 +141,6 @@ public class HyyTimePicker extends RelativeLayout
 		minute_pv.setData(minutes);
 		second_pv.setData(seconds);
 		
-		hour_pv.setSelected(0);
-		minute_pv.setSelected(0);
-		second_pv.setSelected(0);
-		
 		
 	}
 	
@@ -116,8 +154,16 @@ public class HyyTimePicker extends RelativeLayout
 			@Override
 			public void onSelect(String text)
 			{
-				Toast.makeText(context, "选择了 " + text + " 时",
-						Toast.LENGTH_SHORT).show();
+//				Toast.makeText(context, "选择了 " + text + " 时",
+//						Toast.LENGTH_SHORT).show();
+
+				selectedHour = Integer.valueOf(text);
+
+				if (timeChangedListener != null) {
+					timeChangedListener.onTimeChanged(HyyTimePicker.this,
+							getHour(), getMinute(), getSecond());
+				}
+
 			}
 		});
 		
@@ -127,8 +173,18 @@ public class HyyTimePicker extends RelativeLayout
 			@Override
 			public void onSelect(String text)
 			{
-				Toast.makeText(context, "选择了 " + text + " 分",
-						Toast.LENGTH_SHORT).show();
+//				Toast.makeText(context, "选择了 " + text + " 分",
+//						Toast.LENGTH_SHORT).show();
+
+
+				selectedMinute = Integer.valueOf(text);
+
+				if (timeChangedListener != null) {
+					timeChangedListener.onTimeChanged(HyyTimePicker.this,
+							getHour(), getMinute(), getSecond());
+				}
+
+
 			}
 		});
 		
@@ -138,12 +194,129 @@ public class HyyTimePicker extends RelativeLayout
 			@Override
 			public void onSelect(String text)
 			{
-				Toast.makeText(context, "选择了 " + text + " 秒",
-						Toast.LENGTH_SHORT).show();
+//				Toast.makeText(context, "选择了 " + text + " 秒",
+//						Toast.LENGTH_SHORT).show();
+
+				selectedSecond = Integer.valueOf(text);
+
+				if (timeChangedListener != null) {
+					timeChangedListener.onTimeChanged(HyyTimePicker.this,
+							getHour(), getMinute(), getSecond());
+				}
+
 			}
 		});
 	}
-	
+
+
+
+	/**
+	 * 获取当前选择的Hour
+	 *
+	 * @return
+	 */
+	public int getHour() {
+		return Integer.valueOf(selectedHour);
+	}
+
+	/**
+	 * 获取当前选择的Minute
+	 *
+	 * @return
+	 */
+	public int getMinute() {
+		return Integer.valueOf(selectedMinute);
+	}
+
+	/**
+	 * 获取当前选择的Second
+	 *
+	 * @return
+	 */
+	public int getSecond() {
+		return Integer.valueOf(selectedSecond);
+	}
+
+
+	public boolean isUseHour() {
+		return useHour;
+	}
+
+	public void setUseHour(boolean useHour) {
+		this.useHour = useHour;
+	}
+
+	public boolean isUseMinute() {
+		return useMinute;
+	}
+
+	public void setUseMinute(boolean useMinute) {
+		this.useMinute = useMinute;
+	}
+
+	public boolean isUseSecond() {
+		return useSecond;
+	}
+
+	public void setUseSecond(boolean useSecond) {
+		this.useSecond = useSecond;
+	}
+
+
+
+    /**
+     * 刷新项目显示控制
+     */
+    public void refreshHMS() {
+
+        if (!useHour) {
+            hour_pv.setVisibility(GONE);
+        }
+
+        if (!useMinute) {
+            minute_pv.setVisibility(GONE);
+        }
+
+        if (!useSecond) {
+            second_pv.setVisibility(GONE);
+        }
+
+    }
+
+	/***
+	 * 初始化时间选择控件
+	 *
+	 * @param hour
+	 * @param minute
+	 * @param second
+	 * @param listener
+	 */
+	public void init(int hour, int minute, int second,
+					 OnTimeChangedListener listener) {
+
+		this.initData();
+
+		this.timeChangedListener = listener;
+
+		this.selectedHour = hour;
+		this.selectedMinute = minute;
+		this.selectedSecond = second;
+
+
+		hour_pv.setSelected(hour);
+		minute_pv.setSelected(minute);
+		second_pv.setSelected(second);
+
+	}
+
+
+	/**
+	 * 年月日变更触发监听
+	 */
+	public interface OnTimeChangedListener {
+		public void onTimeChanged(HyyTimePicker view, int hour,
+								  int minute, int second);
+	}
 
 	
 }

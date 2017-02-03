@@ -5,14 +5,14 @@
     android:layout_height="fill_parent"
     android:clickable="true"
     android:orientation="vertical"
-    android:padding="20.0dip" >
+    android:padding="20.0dip">
 
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:background="@drawable/dialog_body_bg"
-        android:orientation="vertical" >
+        android:orientation="vertical">
 
         <TextView
             android:id="@+id/title"
@@ -30,14 +30,14 @@
             android:layout_height="wrap_content"
             android:gravity="center" >
 
-            <com.hyy.android.common.view.HyyDatePicker
-                android:id="@+id/date_picker"
+            <com.hyy.android.common.view.HyyTimePicker
+                android:id="@+id/time_picker"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                timepicker:bgColor="@color/white"
-                timepicker:useYear ="true"
-                timepicker:useMonth ="true"
-                timepicker:useDay ="true"
+                timepicker:tpBgColor="@color/white"
+                timepicker:useHour ="true"
+                timepicker:useMinute ="true"
+                timepicker:useSecond ="true"
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="5dp"/>
 

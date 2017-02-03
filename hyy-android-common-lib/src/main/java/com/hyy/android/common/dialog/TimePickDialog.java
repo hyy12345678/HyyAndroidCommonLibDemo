@@ -6,6 +6,7 @@ import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.support.v4.content.ContextCompat;
 import android.view.Display;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup.LayoutParams;
@@ -16,6 +17,7 @@ import android.widget.TextView;
 
 import com.hyy.android.common.R;
 import com.hyy.android.common.view.HyyDatePicker;
+import com.hyy.android.common.view.HyyTimePicker;
 
 import java.util.Calendar;
 
@@ -23,42 +25,42 @@ import java.util.Calendar;
  * Created by hyy on 2017/1/20.
  */
 
-public class DatePickDialog extends Dialog {
+public class TimePickDialog extends Dialog {
 
-    public interface OnDatePickDialogClickListener {
+    public interface OnTimePickDialogClickListener {
 
         int POSITIVE = 1;
         int NEGATIVE = 0;
 
-        void onClick(Calendar chooseCanlendar,int which);
+        void onClick(Calendar chooseCanlendar, int which);
     }
 
 
-    public DatePickDialog(Context context) {
+    public TimePickDialog(Context context) {
         super(context);
     }
 
-    public DatePickDialog(Context context, int theme) {
+    public TimePickDialog(Context context, int theme) {
         super(context, theme);
     }
 
     public static class Builder {
         private Context context;
         private String title;
-        private HyyDatePicker datePicker;
+        private HyyTimePicker timePicker;
         private String positiveButtonText;
         private String negativeButtonText;
 
-        private OnDatePickDialogClickListener positiveButtonClickListener;
-        private OnDatePickDialogClickListener negativeButtonClickListener;
+        private OnTimePickDialogClickListener positiveButtonClickListener;
+        private OnTimePickDialogClickListener negativeButtonClickListener;
 
-        private int YEAR;
-        private int MONTH;
-        private int DAY;
+        private int HOUR;
+        private int MINUTE;
+        private int SECOND;
 
-        private boolean useYear;
-        private boolean useMonth;
-        private boolean useDay;
+        private boolean useHour;
+        private boolean useMinute;
+        private boolean useSecond;
         private Drawable titleBg;
 
 
@@ -66,29 +68,22 @@ public class DatePickDialog extends Dialog {
             this.context = context;
         }
 
-//        public Builder setInitDate(int  year,int month,int day) {
-//            YEAR = year;
-//            MONTH = month;
-//            DAY = day;
-//            return this;
-//        }
-
 
         public Builder setInitDate(Calendar initCalendar) {
-            YEAR = initCalendar.get(Calendar.YEAR);
-            MONTH = initCalendar.get(Calendar.MONTH);
-            DAY = initCalendar.get(Calendar.DAY_OF_MONTH);
+            HOUR = initCalendar.get(Calendar.HOUR);
+            MINUTE = initCalendar.get(Calendar.MINUTE);
+            SECOND = initCalendar.get(Calendar.SECOND);
             return this;
         }
 
-        public Builder setYMDDisplay(boolean useYear,boolean useMonth,boolean useDay) {
-            this.useYear = useYear;
-            this.useMonth = useMonth;
-            this.useDay = useDay;
+        public Builder setHMSDisplay(boolean useHour, boolean useMinute, boolean useSecond) {
+            this.useHour = useHour;
+            this.useMinute = useMinute;
+            this.useSecond = useSecond;
             return this;
         }
 
-        public Builder setTitleBg(Drawable titleBgDrawable){
+        public Builder setTitleBg(Drawable titleBgDrawable) {
 
             titleBg = titleBgDrawable;
             return this;
@@ -125,7 +120,7 @@ public class DatePickDialog extends Dialog {
          * @return
          */
         public Builder setPositiveButton(int positiveButtonText,
-                                         OnDatePickDialogClickListener listener) {
+                                         OnTimePickDialogClickListener listener) {
             this.positiveButtonText = (String) context
                     .getText(positiveButtonText);
             this.positiveButtonClickListener = listener;
@@ -133,14 +128,14 @@ public class DatePickDialog extends Dialog {
         }
 
         public Builder setPositiveButton(String positiveButtonText,
-                                         OnDatePickDialogClickListener listener) {
+                                         OnTimePickDialogClickListener listener) {
             this.positiveButtonText = positiveButtonText;
             this.positiveButtonClickListener = listener;
             return this;
         }
 
         public Builder setNegativeButton(int negativeButtonText,
-                                         OnDatePickDialogClickListener listener) {
+                                         OnTimePickDialogClickListener listener) {
             this.negativeButtonText = (String) context
                     .getText(negativeButtonText);
             this.negativeButtonClickListener = listener;
@@ -148,18 +143,19 @@ public class DatePickDialog extends Dialog {
         }
 
         public Builder setNegativeButton(String negativeButtonText,
-                                         OnDatePickDialogClickListener listener) {
+                                         OnTimePickDialogClickListener listener) {
             this.negativeButtonText = negativeButtonText;
             this.negativeButtonClickListener = listener;
             return this;
         }
 
-        public DatePickDialog create() {
+        public TimePickDialog create() {
+
             LayoutInflater inflater = (LayoutInflater) context
                     .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             // instantiate the dialog with the custom Theme
-            final DatePickDialog dialog = new DatePickDialog(context, R.style.Dialog);
-            View layout = inflater.inflate(R.layout.dialog_date_pick_layout, null);
+            final TimePickDialog dialog = new TimePickDialog(context, R.style.Dialog);
+            View layout = inflater.inflate(R.layout.dialog_time_pick_layout, null);
             dialog.addContentView(layout, new LayoutParams(
                     LayoutParams.FILL_PARENT, LayoutParams.WRAP_CONTENT));
             // set the dialog title
@@ -174,10 +170,14 @@ public class DatePickDialog extends Dialog {
                                 public void onClick(View v) {
 
                                     Calendar ca = Calendar.getInstance();
-                                    ca.set(YEAR,MONTH,DAY);
+//                                    ca.set(YEAR,MONTH,DAY);
+                                    ca.set(Calendar.HOUR, HOUR);
+                                    ca.set(Calendar.MINUTE, MINUTE);
+                                    ca.set(Calendar.SECOND, SECOND);
+
 
                                     positiveButtonClickListener.onClick(ca,
-                                            OnDatePickDialogClickListener.POSITIVE);
+                                            OnTimePickDialogClickListener.POSITIVE);
                                     dialog.dismiss();
                                 }
                             });
@@ -197,10 +197,13 @@ public class DatePickDialog extends Dialog {
                                 public void onClick(View v) {
 
                                     Calendar ca = Calendar.getInstance();
-                                    ca.set(YEAR,MONTH,DAY);
+//                                    ca.set(YEAR,MONTH,DAY);
+                                    ca.set(Calendar.HOUR, HOUR);
+                                    ca.set(Calendar.MINUTE, MINUTE);
+                                    ca.set(Calendar.SECOND, SECOND);
 
                                     negativeButtonClickListener.onClick(ca,
-                                            OnDatePickDialogClickListener.NEGATIVE);
+                                            OnTimePickDialogClickListener.NEGATIVE);
                                     dialog.dismiss();
                                 }
                             });
@@ -211,43 +214,37 @@ public class DatePickDialog extends Dialog {
                         View.GONE);
             }
 
-            // set the content datePicker
+            // set the content timePicker
             Calendar calendar = Calendar.getInstance();
-            YEAR = 0 == YEAR ?  calendar.get(Calendar.YEAR):YEAR;
-            MONTH = 0 == MONTH ?  calendar.get(Calendar.MONTH):MONTH;
-            DAY = 0 == DAY ?  calendar.get(Calendar.DAY_OF_MONTH):DAY;
+            HOUR = 0 == HOUR ? calendar.get(Calendar.HOUR) : HOUR;
+            MINUTE = 0 == MINUTE ? calendar.get(Calendar.MINUTE) : MINUTE;
+            SECOND = 0 == SECOND ? calendar.get(Calendar.SECOND) : SECOND;
 
-            datePicker = ((HyyDatePicker) layout.findViewById(R.id.date_picker));
-            datePicker.init(YEAR, MONTH, DAY, new HyyDatePicker.OnDateChangedListener() {
+            timePicker = ((HyyTimePicker) layout.findViewById(R.id.time_picker));
+            timePicker.init(HOUR, MINUTE, SECOND, new HyyTimePicker.OnTimeChangedListener() {
 
                 @Override
-                public void onDateChanged(HyyDatePicker view, int year,
-                                          int monthOfYear, int dayOfMonth) {
+                public void onTimeChanged(HyyTimePicker view, int hour,
+                                          int minute, int second) {
                     // TODO Auto-generated method stub
-//                    YEAR = datePicker.getYear();
-//                    MONTH = datePicker.getMonth();
-//                    DAY = datePicker.getDayOfMonth();
-
-                    YEAR = year;
-                    MONTH = monthOfYear;
-                    DAY = dayOfMonth;
-
+                    HOUR = hour;
+                    MINUTE = minute;
+                    SECOND = second;
                 }
             });
-            datePicker.setUseYear(useYear);
-            datePicker.setUseMonth(useMonth);
-            datePicker.setUseDay(useDay);
-            datePicker.refreshYMD();
+            timePicker.setUseHour(useHour);
+            timePicker.setUseMinute(useMinute);
+            timePicker.setUseSecond(useSecond);
+            timePicker.refreshHMS();
 
 
             //set bg
-            if(null == titleBg){
-                titleBg =  ContextCompat.getDrawable(context,R.drawable.dialog_title_bg);
+            if (null == titleBg) {
+                titleBg = ContextCompat.getDrawable(context, R.drawable.dialog_title_bg);
             }
             layout.findViewById(R.id.title).setBackgroundDrawable(titleBg);
 
             dialog.setContentView(layout);
-
 
 
             /**
@@ -272,6 +269,7 @@ public class DatePickDialog extends Dialog {
             p.height = (int) (d.getHeight() * 1); // 高度设置为屏幕的1
             p.width = (int) (d.getWidth() * 1); // 宽度设置为屏幕的1
             dialogWindow.setAttributes(p);
+
 
 
 

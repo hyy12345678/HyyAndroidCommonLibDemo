@@ -8,13 +8,17 @@
     <com.hyy.android.common.view.HyyTimePicker
         android:id="@+id/time_picker"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        timepicker:tpBgColor="@color/white"
+        timepicker:useHour = "true"
+        timepicker:useMinute = "true"
+        timepicker:useSecond = "true"/>
 
     <com.hyy.android.common.view.HyyDatePicker
         android:id="@+id/date_picker"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        timepicker:bgColor="@color/orange"
+        timepicker:dpBgColor="@color/orange"
         timepicker:useYear ="true"
         timepicker:useMonth ="true"
         timepicker:useDay ="true"
@@ -30,11 +34,19 @@
         android:layout_marginTop="10dp" />
 
     <Button
-        android:id="@+id/btn_dialog"
+        android:id="@+id/btn_date_dialog"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/btn_show"
-        android:text="Pop dialog"
+        android:text="Date Pop dialog"
+        android:layout_marginTop="10dp" />
+
+    <Button
+        android:id="@+id/btn_time_dialog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btn_date_dialog"
+        android:text="Time Pop dialog"
         android:layout_marginTop="10dp" />
 
 </RelativeLayout>
