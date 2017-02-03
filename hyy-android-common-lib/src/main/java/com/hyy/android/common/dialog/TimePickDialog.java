@@ -267,7 +267,7 @@ public class TimePickDialog extends Dialog {
             Display d = m.getDefaultDisplay(); // 获取屏幕宽、高用
             WindowManager.LayoutParams p = dialogWindow.getAttributes(); // 获取对话框当前的参数值
             p.height = (int) (d.getHeight() * 1); // 高度设置为屏幕的1
-            p.width = (int) (d.getWidth() * 1.02); // 宽度设置为屏幕的1.02
+            p.width = (int) (d.getWidth() * 1); // 宽度设置为屏幕的1
             dialogWindow.setAttributes(p);
 
 
