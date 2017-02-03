@@ -250,33 +250,6 @@ public class DatePickDialog extends Dialog {
 
 
 
-            /**
-             * 重新赋值一下dialog的大小
-             */
-            Window dialogWindow = dialog.getWindow();
-//            WindowManager.LayoutParams lp = dialogWindow.getAttributes();
-//            dialogWindow.setGravity(Gravity.LEFT | Gravity.TOP);
-//
-//            lp.x = 100; // 新位置X坐标
-//            lp.y = 100; // 新位置Y坐标
-//            lp.width = 300; // 宽度
-//            lp.height = 300; // 高度
-//            lp.alpha = 0.7f; // 透明度
-//
-//            dialogWindow.setAttributes(lp);
-
-            //将对话框的大小按屏幕大小的百分比设置
-            WindowManager m = ((Activity)context).getWindowManager();
-            Display d = m.getDefaultDisplay(); // 获取屏幕宽、高用
-            WindowManager.LayoutParams p = dialogWindow.getAttributes(); // 获取对话框当前的参数值
-            p.height = (int) (d.getHeight() * 1); // 高度设置为屏幕的1
-            p.width = (int) (d.getWidth() * 1); // 宽度设置为屏幕的1
-            dialogWindow.setAttributes(p);
-
-
-
-
-
             return dialog;
         }
     }
