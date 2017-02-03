@@ -28,7 +28,7 @@
             android:id="@+id/content"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:gravity="center" >
+            android:gravity="left" >
 
             <com.hyy.android.common.view.HyyTimePicker
                 android:id="@+id/time_picker"
