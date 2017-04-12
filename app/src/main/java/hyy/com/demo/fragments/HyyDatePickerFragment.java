@@ -53,27 +53,27 @@ public class HyyDatePickerFragment extends Fragment {
         btn_time_dialog = (Button) view.findViewById(R.id.btn_time_dialog);
 
 
-        Calendar calendar = Calendar.getInstance();
-        int year = calendar.get(Calendar.YEAR);
-        int month = calendar.get(Calendar.MONTH);
-        int day = calendar.get(Calendar.DAY_OF_MONTH);
-
-        datePickerStart.init(year, month, day, new HyyDatePicker.OnDateChangedListener() {
-
-            @Override
-            public void onDateChanged(HyyDatePicker view, int year,
-                                      int monthOfYear, int dayOfMonth) {
-                // TODO Auto-generated method stub
-//                startYear = datePickerStart.getYear();
-//                startMonth = datePickerStart.getMonth();
-//                startDay = datePickerStart.getDayOfMonth();
-
-                startYear = year;
-                startMonth = monthOfYear;
-                startDay = dayOfMonth;
-
-            }
-        });
+//        Calendar calendar = Calendar.getInstance();
+//        int year = calendar.get(Calendar.YEAR);
+//        int month = calendar.get(Calendar.MONTH);
+//        int day = calendar.get(Calendar.DAY_OF_MONTH);
+//
+//        datePickerStart.init(year, month, day, new HyyDatePicker.OnDateChangedListener() {
+//
+//            @Override
+//            public void onDateChanged(HyyDatePicker view, int year,
+//                                      int monthOfYear, int dayOfMonth) {
+//                // TODO Auto-generated method stub
+////                startYear = datePickerStart.getYear();
+////                startMonth = datePickerStart.getMonth();
+////                startDay = datePickerStart.getDayOfMonth();
+//
+//                startYear = year;
+//                startMonth = monthOfYear;
+//                startDay = dayOfMonth;
+//
+//            }
+//        });
 
 
         init();
@@ -207,7 +207,7 @@ public class HyyDatePickerFragment extends Fragment {
         int month = calendar.get(Calendar.MONTH);
         int day = calendar.get(Calendar.DAY_OF_MONTH);
 
-        datePickerStart.init(year, month, day, new HyyDatePicker.OnDateChangedListener() {
+        datePickerStart.init(year, month, day, 2010,2018 ,new HyyDatePicker.OnDateChangedListener() {
 
             @Override
             public void onDateChanged(HyyDatePicker view, int year,

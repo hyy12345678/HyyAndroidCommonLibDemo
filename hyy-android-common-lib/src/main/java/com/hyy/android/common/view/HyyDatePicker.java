@@ -1,8 +1,5 @@
 package com.hyy.android.common.view;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -11,9 +8,11 @@ import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.RelativeLayout;
-import android.widget.TextView;
 
 import com.hyy.android.common.R;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class HyyDatePicker extends RelativeLayout {
@@ -42,6 +41,10 @@ public class HyyDatePicker extends RelativeLayout {
     boolean useYear;
     boolean useMonth;
     boolean useDay;
+
+
+    private int SELECT_FROM_YEAR = 1970;
+    private int SELECT_TO_YEAR = 2100;
 
     public HyyDatePicker(Context context) {
         super(context);
@@ -120,7 +123,7 @@ public class HyyDatePicker extends RelativeLayout {
         List<String> months = new ArrayList<String>();
         List<String> days = new ArrayList<String>();
 
-        for (int i = 1970; i < 2100; i++) {
+        for (int i = SELECT_FROM_YEAR; i < SELECT_TO_YEAR; i++) {
             years.add(String.valueOf(i));
         }
         for (int i = 1; i < 13; i++) {
@@ -402,12 +405,45 @@ public class HyyDatePicker extends RelativeLayout {
         this.selectedMonth = month;
         this.selectedDay = day - 1;
 
-        int yearGap = year - 1970;
+        int yearGap = year - SELECT_FROM_YEAR;
         year_pv.setSelected(yearGap);
         month_pv.setSelected(month);
 
         adjustDay(selectedYear, selectedMonth);
     }
+
+    /***
+     * 初始化日期选择控件
+     *
+     * @param year     (SELECT_FROM_YEAR~SELECT_TO_YEAR)
+     * @param month    (0~11)
+     * @param day
+     * @param select_from_year SELECT_FROM_YEAR
+     * @param select_to_year SELECT_TO_YEAR
+     * @param listener
+     */
+    public void init(int year, int month, int day,
+                     int select_from_year,int select_to_year,
+                     OnDateChangedListener listener) {
+
+        this.SELECT_FROM_YEAR = select_from_year;
+        this.SELECT_TO_YEAR = select_to_year;
+
+        this.initData();
+
+        this.dateChangeLister = listener;
+
+        this.selectedYear = year;
+        this.selectedMonth = month;
+        this.selectedDay = day - 1;
+
+        int yearGap = year - SELECT_FROM_YEAR;
+        year_pv.setSelected(yearGap);
+        month_pv.setSelected(month);
+
+        adjustDay(selectedYear, selectedMonth);
+    }
+
 
     /**
      * 年月日变更触发监听
