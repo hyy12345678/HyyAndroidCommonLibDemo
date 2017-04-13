@@ -61,6 +61,8 @@ public class DatePickDialog extends Dialog {
         private boolean useDay;
         private Drawable titleBg;
 
+        private int selectFromYear = -1;
+        private int selectToYear = -1;
 
         public Builder(Context context) {
             this.context = context;
@@ -72,6 +74,13 @@ public class DatePickDialog extends Dialog {
 //            DAY = day;
 //            return this;
 //        }
+
+
+        public Builder setSelectRange(int selectFromYear,int selectToYear){
+            this.selectFromYear = selectFromYear;
+            this.selectToYear = selectToYear;
+            return this;
+        }
 
 
         public Builder setInitDate(Calendar initCalendar) {
@@ -93,6 +102,7 @@ public class DatePickDialog extends Dialog {
             titleBg = titleBgDrawable;
             return this;
         }
+
 
         /**
          * Set the Dialog title from resource
@@ -218,22 +228,45 @@ public class DatePickDialog extends Dialog {
             DAY = 0 == DAY ?  calendar.get(Calendar.DAY_OF_MONTH):DAY;
 
             datePicker = ((HyyDatePicker) layout.findViewById(R.id.date_picker));
-            datePicker.init(YEAR, MONTH, DAY, new HyyDatePicker.OnDateChangedListener() {
 
-                @Override
-                public void onDateChanged(HyyDatePicker view, int year,
-                                          int monthOfYear, int dayOfMonth) {
-                    // TODO Auto-generated method stub
+            if(-1 == selectFromYear || -1 == selectToYear){
+                datePicker.init(YEAR, MONTH, DAY, new HyyDatePicker.OnDateChangedListener() {
+
+                    @Override
+                    public void onDateChanged(HyyDatePicker view, int year,
+                                              int monthOfYear, int dayOfMonth) {
+                        // TODO Auto-generated method stub
 //                    YEAR = datePicker.getYear();
 //                    MONTH = datePicker.getMonth();
 //                    DAY = datePicker.getDayOfMonth();
 
-                    YEAR = year;
-                    MONTH = monthOfYear;
-                    DAY = dayOfMonth;
+                        YEAR = year;
+                        MONTH = monthOfYear;
+                        DAY = dayOfMonth;
 
-                }
-            });
+                    }
+                });
+            }else{
+                datePicker.init(YEAR, MONTH, DAY,selectFromYear,selectToYear, new HyyDatePicker.OnDateChangedListener() {
+
+                    @Override
+                    public void onDateChanged(HyyDatePicker view, int year,
+                                              int monthOfYear, int dayOfMonth) {
+                        // TODO Auto-generated method stub
+//                    YEAR = datePicker.getYear();
+//                    MONTH = datePicker.getMonth();
+//                    DAY = datePicker.getDayOfMonth();
+
+                        YEAR = year;
+                        MONTH = monthOfYear;
+                        DAY = dayOfMonth;
+
+                    }
+                });
+            }
+
+
+
             datePicker.setUseYear(useYear);
             datePicker.setUseMonth(useMonth);
             datePicker.setUseDay(useDay);

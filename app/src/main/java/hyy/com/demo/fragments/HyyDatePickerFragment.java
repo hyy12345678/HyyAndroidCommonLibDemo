@@ -121,6 +121,7 @@ public class HyyDatePickerFragment extends Fragment {
                 builder.setInitDate(calendar);
                 builder.setYMDDisplay(true, true, true);
                 builder.setTitle("提示");
+                builder.setSelectRange(2010,2018);
                 builder.setPositiveButton("确定",
                         new DatePickDialog.OnDatePickDialogClickListener() {
                             @Override
