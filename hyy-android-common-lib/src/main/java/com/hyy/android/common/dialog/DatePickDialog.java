@@ -1,16 +1,12 @@
 package com.hyy.android.common.dialog;
 
-import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.support.v4.content.ContextCompat;
-import android.view.Display;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup.LayoutParams;
-import android.view.Window;
-import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -52,9 +48,9 @@ public class DatePickDialog extends Dialog {
         private OnDatePickDialogClickListener positiveButtonClickListener;
         private OnDatePickDialogClickListener negativeButtonClickListener;
 
-        private int YEAR;
-        private int MONTH;
-        private int DAY;
+        private int YEAR = -1;
+        private int MONTH = -1;
+        private int DAY = -1;
 
         private boolean useYear;
         private boolean useMonth;
@@ -223,9 +219,9 @@ public class DatePickDialog extends Dialog {
 
             // set the content datePicker
             Calendar calendar = Calendar.getInstance();
-            YEAR = 0 == YEAR ?  calendar.get(Calendar.YEAR):YEAR;
-            MONTH = 0 == MONTH ?  calendar.get(Calendar.MONTH):MONTH;
-            DAY = 0 == DAY ?  calendar.get(Calendar.DAY_OF_MONTH):DAY;
+            YEAR = -1 == YEAR ?  calendar.get(Calendar.YEAR):YEAR;
+            MONTH = -1 == MONTH ?  calendar.get(Calendar.MONTH):MONTH;
+            DAY = -1 == DAY ?  calendar.get(Calendar.DAY_OF_MONTH):DAY;
 
             datePicker = ((HyyDatePicker) layout.findViewById(R.id.date_picker));
 

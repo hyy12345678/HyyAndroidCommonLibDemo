@@ -102,7 +102,7 @@ public class HyyDatePickerFragment extends Fragment {
             public void onClick(View v) {
 
 
-                String initStr = "2014-01-13";
+                String initStr = "1962-01-13";
                 Calendar calendar = Calendar.getInstance();
                 final DateFormat format1 = new SimpleDateFormat("yyyy-MM-dd");
 
@@ -121,7 +121,7 @@ public class HyyDatePickerFragment extends Fragment {
                 builder.setInitDate(calendar);
                 builder.setYMDDisplay(true, true, true);
                 builder.setTitle("提示");
-                builder.setSelectRange(2010,2018);
+                builder.setSelectRange(1900,2099);
                 builder.setPositiveButton("确定",
                         new DatePickDialog.OnDatePickDialogClickListener() {
                             @Override
