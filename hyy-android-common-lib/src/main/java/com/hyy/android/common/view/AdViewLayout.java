@@ -144,7 +144,7 @@ public class AdViewLayout extends RelativeLayout {
 
         inflater = (LayoutInflater) context
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        headerView = inflater.inflate(R.layout.view_ad_header, null);
+        headerView = inflater.inflate(R.layout.hyy_commlib_view_ad_header, null);
 
         viewPagerAutoScroll = (AutoScrollViewPager) headerView
                 .findViewById(R.id.viewPagerAutoScroll);

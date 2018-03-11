@@ -19,29 +19,30 @@ import java.util.Calendar;
  * Created by hyy on 2017/1/20.
  */
 
-public class DatePickDialog extends Dialog {
+public class DoubleDatePickDialog extends Dialog {
 
     public interface OnDatePickDialogClickListener {
 
         int POSITIVE = 1;
         int NEGATIVE = 0;
 
-        void onClick(Calendar chooseCanlendar,int which);
+        void onClick(Calendar chooseCanlendar1,Calendar chooseCanlendar2, int which);
     }
 
 
-    public DatePickDialog(Context context) {
+    public DoubleDatePickDialog(Context context) {
         super(context);
     }
 
-    public DatePickDialog(Context context, int theme) {
+    public DoubleDatePickDialog(Context context, int theme) {
         super(context, theme);
     }
 
     public static class Builder {
         private Context context;
         private String title;
-        private HyyDatePicker datePicker;
+        private HyyDatePicker datePicker1;
+        private HyyDatePicker datePicker2;
         private String positiveButtonText;
         private String negativeButtonText;
 
@@ -52,6 +53,11 @@ public class DatePickDialog extends Dialog {
         private int MONTH = -1;
         private int DAY = -1;
 
+        private int YEAR2 = -1;
+        private int MONTH2 = -1;
+        private int DAY2 = -1;
+
+
         private boolean useYear;
         private boolean useMonth;
         private boolean useDay;
@@ -59,6 +65,10 @@ public class DatePickDialog extends Dialog {
 
         private int selectFromYear = -1;
         private int selectToYear = -1;
+
+        private String data_picker1_desc;
+        private String data_picker2_desc;
+
 
         public Builder(Context context) {
             this.context = context;
@@ -85,6 +95,14 @@ public class DatePickDialog extends Dialog {
             DAY = initCalendar.get(Calendar.DAY_OF_MONTH);
             return this;
         }
+
+        public Builder setInitDate2(Calendar initCalendar) {
+            YEAR2 = initCalendar.get(Calendar.YEAR);
+            MONTH2 = initCalendar.get(Calendar.MONTH);
+            DAY2 = initCalendar.get(Calendar.DAY_OF_MONTH);
+            return this;
+        }
+
 
         public Builder setYMDDisplay(boolean useYear,boolean useMonth,boolean useDay) {
             this.useYear = useYear;
@@ -160,12 +178,26 @@ public class DatePickDialog extends Dialog {
             return this;
         }
 
-        public DatePickDialog create() {
+
+        public Builder setDataPicker1Desc(String desc){
+
+            data_picker1_desc = desc;
+            return this;
+        }
+
+        public Builder setDataPicker2Desc(String desc){
+
+            data_picker2_desc = desc;
+            return this;
+        }
+
+
+        public DoubleDatePickDialog create() {
             LayoutInflater inflater = (LayoutInflater) context
                     .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             // instantiate the dialog with the custom Theme
-            final DatePickDialog dialog = new DatePickDialog(context, R.style.Dialog);
-            View layout = inflater.inflate(R.layout.hyy_commlib_dialog_date_pick_layout, null);
+            final DoubleDatePickDialog dialog = new DoubleDatePickDialog(context, R.style.Dialog);
+            View layout = inflater.inflate(R.layout.hyy_commlib_dialog_double_date_pick_layout, null);
             dialog.addContentView(layout, new LayoutParams(
                     LayoutParams.FILL_PARENT, LayoutParams.WRAP_CONTENT));
             // set the dialog title
@@ -179,10 +211,13 @@ public class DatePickDialog extends Dialog {
                             .setOnClickListener(new View.OnClickListener() {
                                 public void onClick(View v) {
 
-                                    Calendar ca = Calendar.getInstance();
-                                    ca.set(YEAR,MONTH,DAY);
+                                    Calendar ca1 = Calendar.getInstance();
+                                    ca1.set(YEAR,MONTH,DAY);
 
-                                    positiveButtonClickListener.onClick(ca,
+                                    Calendar ca2 = Calendar.getInstance();
+                                    ca2.set(YEAR2,MONTH2,DAY2);
+
+                                    positiveButtonClickListener.onClick(ca1,ca2,
                                             OnDatePickDialogClickListener.POSITIVE);
                                     dialog.dismiss();
                                 }
@@ -202,10 +237,13 @@ public class DatePickDialog extends Dialog {
                             .setOnClickListener(new View.OnClickListener() {
                                 public void onClick(View v) {
 
-                                    Calendar ca = Calendar.getInstance();
-                                    ca.set(YEAR,MONTH,DAY);
+                                    Calendar ca1 = Calendar.getInstance();
+                                    ca1.set(YEAR,MONTH,DAY);
 
-                                    negativeButtonClickListener.onClick(ca,
+                                    Calendar ca2 = Calendar.getInstance();
+                                    ca2.set(YEAR2,MONTH2,DAY2);
+
+                                    negativeButtonClickListener.onClick(ca1,ca2,
                                             OnDatePickDialogClickListener.NEGATIVE);
                                     dialog.dismiss();
                                 }
@@ -217,24 +255,29 @@ public class DatePickDialog extends Dialog {
                         View.GONE);
             }
 
-            // set the content datePicker
+            // set the content datePicker1
             Calendar calendar = Calendar.getInstance();
             YEAR = -1 == YEAR ?  calendar.get(Calendar.YEAR):YEAR;
             MONTH = -1 == MONTH ?  calendar.get(Calendar.MONTH):MONTH;
             DAY = -1 == DAY ?  calendar.get(Calendar.DAY_OF_MONTH):DAY;
 
-            datePicker = ((HyyDatePicker) layout.findViewById(R.id.date_picker));
+            YEAR2 = -1 == YEAR2 ?  calendar.get(Calendar.YEAR):YEAR2;
+            MONTH2 = -1 == MONTH2 ?  calendar.get(Calendar.MONTH):MONTH2;
+            DAY2 = -1 == DAY2 ?  calendar.get(Calendar.DAY_OF_MONTH):DAY2;
+
+            datePicker1 = ((HyyDatePicker) layout.findViewById(R.id.date_picker1));
+            datePicker2 = ((HyyDatePicker) layout.findViewById(R.id.date_picker2));
 
             if(-1 == selectFromYear || -1 == selectToYear){
-                datePicker.init(YEAR, MONTH, DAY, new HyyDatePicker.OnDateChangedListener() {
+                datePicker1.init(YEAR, MONTH, DAY, new HyyDatePicker.OnDateChangedListener() {
 
                     @Override
                     public void onDateChanged(HyyDatePicker view, int year,
                                               int monthOfYear, int dayOfMonth) {
                         // TODO Auto-generated method stub
-//                    YEAR = datePicker.getYear();
-//                    MONTH = datePicker.getMonth();
-//                    DAY = datePicker.getDayOfMonth();
+//                    YEAR = datePicker1.getYear();
+//                    MONTH = datePicker1.getMonth();
+//                    DAY = datePicker1.getDayOfMonth();
 
                         YEAR = year;
                         MONTH = monthOfYear;
@@ -242,20 +285,55 @@ public class DatePickDialog extends Dialog {
 
                     }
                 });
-            }else{
-                datePicker.init(YEAR, MONTH, DAY,selectFromYear,selectToYear, new HyyDatePicker.OnDateChangedListener() {
+
+                datePicker2.init(YEAR2, MONTH2, DAY2, new HyyDatePicker.OnDateChangedListener() {
 
                     @Override
                     public void onDateChanged(HyyDatePicker view, int year,
                                               int monthOfYear, int dayOfMonth) {
                         // TODO Auto-generated method stub
-//                    YEAR = datePicker.getYear();
-//                    MONTH = datePicker.getMonth();
-//                    DAY = datePicker.getDayOfMonth();
+//                    YEAR = datePicker1.getYear();
+//                    MONTH = datePicker1.getMonth();
+//                    DAY = datePicker1.getDayOfMonth();
+
+                        YEAR2 = year;
+                        MONTH2 = monthOfYear;
+                        DAY2 = dayOfMonth;
+
+                    }
+                });
+
+            }else{
+                datePicker1.init(YEAR, MONTH, DAY,selectFromYear,selectToYear, new HyyDatePicker.OnDateChangedListener() {
+
+                    @Override
+                    public void onDateChanged(HyyDatePicker view, int year,
+                                              int monthOfYear, int dayOfMonth) {
+                        // TODO Auto-generated method stub
+//                    YEAR = datePicker1.getYear();
+//                    MONTH = datePicker1.getMonth();
+//                    DAY = datePicker1.getDayOfMonth();
 
                         YEAR = year;
                         MONTH = monthOfYear;
                         DAY = dayOfMonth;
+
+                    }
+                });
+
+                datePicker2.init(YEAR2, MONTH2, DAY2,selectFromYear,selectToYear, new HyyDatePicker.OnDateChangedListener() {
+
+                    @Override
+                    public void onDateChanged(HyyDatePicker view, int year,
+                                              int monthOfYear, int dayOfMonth) {
+                        // TODO Auto-generated method stub
+//                    YEAR = datePicker1.getYear();
+//                    MONTH = datePicker1.getMonth();
+//                    DAY = datePicker1.getDayOfMonth();
+
+                        YEAR2 = year;
+                        MONTH2 = monthOfYear;
+                        DAY2 = dayOfMonth;
 
                     }
                 });
@@ -263,17 +341,29 @@ public class DatePickDialog extends Dialog {
 
 
 
-            datePicker.setUseYear(useYear);
-            datePicker.setUseMonth(useMonth);
-            datePicker.setUseDay(useDay);
-            datePicker.refreshYMD();
+            datePicker1.setUseYear(useYear);
+            datePicker1.setUseMonth(useMonth);
+            datePicker1.setUseDay(useDay);
+            datePicker1.refreshYMD();
+
+            datePicker2.setUseYear(useYear);
+            datePicker2.setUseMonth(useMonth);
+            datePicker2.setUseDay(useDay);
+            datePicker2.refreshYMD();
+
 
 
             //set bg
             if(null == titleBg){
                 titleBg =  ContextCompat.getDrawable(context,R.drawable.dialog_title_bg);
             }
+
             layout.findViewById(R.id.title).setBackgroundDrawable(titleBg);
+
+            //set desc
+            ((TextView)layout.findViewById(R.id.tv_data_pick1_desc)).setText(data_picker1_desc);
+            ((TextView)layout.findViewById(R.id.tv_data_pick2_desc)).setText(data_picker2_desc);
+
 
             dialog.setContentView(layout);
 

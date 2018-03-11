@@ -1,22 +1,16 @@
 package com.hyy.android.common.dialog;
 
-import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.support.v4.content.ContextCompat;
-import android.view.Display;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup.LayoutParams;
-import android.view.Window;
-import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.TextView;
 
 import com.hyy.android.common.R;
-import com.hyy.android.common.view.HyyDatePicker;
 import com.hyy.android.common.view.HyyTimePicker;
 
 import java.util.Calendar;
@@ -155,7 +149,7 @@ public class TimePickDialog extends Dialog {
                     .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             // instantiate the dialog with the custom Theme
             final TimePickDialog dialog = new TimePickDialog(context, R.style.Dialog);
-            View layout = inflater.inflate(R.layout.dialog_time_pick_layout, null);
+            View layout = inflater.inflate(R.layout.hyy_commlib_dialog_time_pick_layout, null);
             dialog.addContentView(layout, new LayoutParams(
                     LayoutParams.FILL_PARENT, LayoutParams.WRAP_CONTENT));
             // set the dialog title

@@ -102,7 +102,7 @@ public class HyyDatePicker extends RelativeLayout {
         // TODO Auto-generated method stub
         inflater = (LayoutInflater) context
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        innerView = inflater.inflate(R.layout.hyy_date_picker, null);
+        innerView = inflater.inflate(R.layout.hyy_commlib_date_picker, null);
         innerLayout = (RelativeLayout) innerView
                 .findViewById(R.id.rLayout_date_picker);
 

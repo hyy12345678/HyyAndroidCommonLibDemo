@@ -12,7 +12,6 @@ import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.RelativeLayout;
-import android.widget.Toast;
 
 import com.hyy.android.common.R;
 
@@ -104,7 +103,7 @@ public class HyyTimePicker extends RelativeLayout
 		// TODO Auto-generated method stub
 		inflater = (LayoutInflater) context
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-		innerView = inflater.inflate(R.layout.hyy_time_picker, null);
+		innerView = inflater.inflate(R.layout.hyy_commlib_time_picker, null);
 		
 		hour_pv = (PickerView) innerView.findViewById(R.id.hour_pv);
 		minute_pv = (PickerView) innerView.findViewById(R.id.minute_pv);
