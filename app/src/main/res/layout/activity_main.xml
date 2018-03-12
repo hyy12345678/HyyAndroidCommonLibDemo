@@ -7,30 +7,53 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:orientation="vertical"
-    tools:context=".MainActivity" >
+    tools:context="hyy.com.demo.MainActivity" >
 
-    <Button
-        android:id="@+id/btn_drop_down_list"
-        android:text="drop_down_list"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-    <Button
-        android:id="@+id/btn_auto_extends_viewgroup"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="auto_ext_viewgroup"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-    <Button
-        android:id="@+id/btn_hyy_date_picker"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="hyy_date_picker"/>
+            <Button
+                android:id="@+id/btn_drop_down_list"
+                android:text="drop_down_list"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
 
-    <Button
-        android:id="@+id/btn_ad_view"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="ad_view"/>
+            <Button
+                android:id="@+id/btn_auto_extends_viewgroup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="auto_ext_viewgroup"/>
+
+            <Button
+                android:id="@+id/btn_hyy_date_picker"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="hyy_date_picker"/>
+
+            <Button
+                android:id="@+id/btn_ad_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ad_view"/>
+
+            <Button
+                android:id="@+id/btn_regular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="regular"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+    
+
 
 </LinearLayout>

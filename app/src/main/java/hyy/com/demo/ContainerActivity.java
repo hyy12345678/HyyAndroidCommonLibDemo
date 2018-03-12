@@ -11,6 +11,7 @@ import hyy.com.demo.fragments.AdViewFragment;
 import hyy.com.demo.fragments.AutoExtVGFragment;
 import hyy.com.demo.fragments.DropDownListFragment;
 import hyy.com.demo.fragments.HyyDatePickerFragment;
+import hyy.com.demo.fragments.RegularFragment;
 import hyy.com.dropdownlistviewdemo.R;
 
 public class ContainerActivity extends AppCompatActivity {
@@ -45,6 +46,11 @@ public class ContainerActivity extends AppCompatActivity {
 
             case Constants.TYPE_AD_VIEW:
                 fragment = AdViewFragment.newInstance();
+
+                break;
+
+            case Constants.TYPE_REGULAR:
+                fragment = RegularFragment.getInstance();
 
                 break;
 

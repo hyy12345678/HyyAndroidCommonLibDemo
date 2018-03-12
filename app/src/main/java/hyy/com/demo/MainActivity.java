@@ -25,7 +25,8 @@ public class MainActivity extends AppCompatActivity {
     Button btnHyyDatePicker;
     @Bind(R.id.btn_ad_view)
     Button btnAdView;
-
+    @Bind(R.id.btn_regular)
+    Button btnRegular;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -75,6 +76,16 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent(MainActivity.this, ContainerActivity.class);
 
                 intent.putExtra("type", Constants.TYPE_AD_VIEW);
+                startActivity(intent);
+            }
+        });
+
+        btnRegular.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, ContainerActivity.class);
+
+                intent.putExtra("type", Constants.TYPE_REGULAR);
                 startActivity(intent);
             }
         });
