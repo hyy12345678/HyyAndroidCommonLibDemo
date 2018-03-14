@@ -5,6 +5,8 @@ import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.widget.LinearLayout;
 
+import com.hyy.android.common.R;
+
 /**
  * Created by hyy on 2018/3/11.
  */
@@ -13,6 +15,8 @@ public class FormEditText extends LinearLayout {
 
     Context context;
     private LayoutInflater inflater;
+
+    LinearLayout innerLayout;
 
     public FormEditText(Context context) {
         super(context);
@@ -49,9 +53,14 @@ public class FormEditText extends LinearLayout {
     private void initView() {
         inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
+        innerLayout = (LinearLayout) inflater.inflate(R.layout.hyy_commlib_form_edit_text,this);
+
+
+
     }
 
     private void initData() {
+
 
     }
 
