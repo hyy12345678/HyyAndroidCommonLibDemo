@@ -10,6 +10,7 @@ public class Constants {
     public static final int TYPE_HYY_DATE_PICKER = 3;
     public static final int TYPE_AD_VIEW = 4;
     public static final int TYPE_REGULAR = 5;
+    public static final int TYPE_SPINNER = 6;
 
 
     // 一堆图片链接

@@ -48,6 +48,12 @@
                 android:layout_height="wrap_content"
                 android:text="regular"/>
 
+            <Button
+                android:id="@+id/btn_spinner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="spinner"/>
+
         </LinearLayout>
 
     </ScrollView>

@@ -12,6 +12,7 @@ import hyy.com.demo.fragments.AutoExtVGFragment;
 import hyy.com.demo.fragments.DropDownListFragment;
 import hyy.com.demo.fragments.HyyDatePickerFragment;
 import hyy.com.demo.fragments.RegularFragment;
+import hyy.com.demo.fragments.SpinnerFragment;
 import hyy.com.dropdownlistviewdemo.R;
 
 public class ContainerActivity extends AppCompatActivity {
@@ -51,6 +52,11 @@ public class ContainerActivity extends AppCompatActivity {
 
             case Constants.TYPE_REGULAR:
                 fragment = RegularFragment.getInstance();
+
+                break;
+
+            case Constants.TYPE_SPINNER:
+                fragment = SpinnerFragment.newInstance();
 
                 break;
 

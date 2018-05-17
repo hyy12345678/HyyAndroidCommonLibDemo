@@ -27,6 +27,8 @@ public class MainActivity extends AppCompatActivity {
     Button btnAdView;
     @Bind(R.id.btn_regular)
     Button btnRegular;
+    @Bind(R.id.btn_spinner)
+    Button btnSpinner;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -86,6 +88,16 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent(MainActivity.this, ContainerActivity.class);
 
                 intent.putExtra("type", Constants.TYPE_REGULAR);
+                startActivity(intent);
+            }
+        });
+
+        btnSpinner.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, ContainerActivity.class);
+
+                intent.putExtra("type", Constants.TYPE_SPINNER);
                 startActivity(intent);
             }
         });
