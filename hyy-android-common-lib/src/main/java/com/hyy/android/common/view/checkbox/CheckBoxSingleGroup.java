@@ -159,6 +159,9 @@ public class CheckBoxSingleGroup extends LinearLayout {
 
     public void setOnItemSelectedListener(OnItemSelectedListener listener){
         this.innerListener = listener;
+        if(!innerList.isEmpty()){
+            setViews();
+        }
     }
 
     public interface OnItemSelectedListener{

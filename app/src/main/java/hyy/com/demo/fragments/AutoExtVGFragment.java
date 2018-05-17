@@ -15,6 +15,8 @@ import java.util.List;
 
 import hyy.com.dropdownlistviewdemo.R;
 
+import static java.security.AccessController.getContext;
+
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link AutoExtVGFragment#newInstance} factory method to
@@ -69,6 +71,7 @@ public class AutoExtVGFragment extends Fragment {
         list.add("一个小姑娘在卖火");
         list.add("一个小姑娘在卖火柴");
 
+        cbsg.setList(list);
         cbsg.setOnItemSelectedListener(new CheckBoxSingleGroup.OnItemSelectedListener() {
             @Override
             public void onItemSelected(int position, boolean isChecked) {
@@ -76,7 +79,6 @@ public class AutoExtVGFragment extends Fragment {
             }
         });
 
-        cbsg.setList(list);
 
 
 
