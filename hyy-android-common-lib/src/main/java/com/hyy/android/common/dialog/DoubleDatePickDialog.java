@@ -196,7 +196,7 @@ public class DoubleDatePickDialog extends Dialog {
             LayoutInflater inflater = (LayoutInflater) context
                     .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             // instantiate the dialog with the custom Theme
-            final DoubleDatePickDialog dialog = new DoubleDatePickDialog(context, R.style.Dialog);
+            final DoubleDatePickDialog dialog = new DoubleDatePickDialog(context, R.style.hyy_commlib_Dialog);
             View layout = inflater.inflate(R.layout.hyy_commlib_dialog_double_date_pick_layout, null);
             dialog.addContentView(layout, new LayoutParams(
                     LayoutParams.FILL_PARENT, LayoutParams.WRAP_CONTENT));
@@ -355,7 +355,7 @@ public class DoubleDatePickDialog extends Dialog {
 
             //set bg
             if(null == titleBg){
-                titleBg =  ContextCompat.getDrawable(context,R.drawable.dialog_title_bg);
+                titleBg =  ContextCompat.getDrawable(context,R.drawable.hyy_commlib_dialog_title_bg);
             }
 
             layout.findViewById(R.id.title).setBackgroundDrawable(titleBg);

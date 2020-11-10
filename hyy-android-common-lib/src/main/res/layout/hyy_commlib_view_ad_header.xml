@@ -7,7 +7,7 @@
     <FrameLayout
         android:id="@+id/frameLayoutAd"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/firstpage_ad_height" >
+        android:layout_height="@dimen/hyy_commlib_firstpage_ad_height" >
 
         <com.hyy.android.common.component.AutoScrollViewPager
             android:id="@+id/viewPagerAutoScroll"
@@ -22,11 +22,11 @@
             <LinearLayout
                 android:id="@+id/linearLayoutIndicator"
                 android:layout_width="fill_parent"
-                android:layout_height="@dimen/firstpage_ad_indicator_height"
+                android:layout_height="@dimen/hyy_commlib_firstpage_ad_indicator_height"
                 android:layout_alignParentBottom="true"
                 android:gravity="right|center_vertical"
                 android:orientation="horizontal"
-                android:paddingRight="@dimen/firstpage_ad_indicator_padding" >
+                android:paddingRight="@dimen/hyy_commlib_firstpage_ad_indicator_padding" >
             </LinearLayout>
         </RelativeLayout>
     </FrameLayout>

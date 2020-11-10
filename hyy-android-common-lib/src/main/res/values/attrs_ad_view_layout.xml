@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <declare-styleable name="AdViewLayout">
-        <attr name="ads01Drawable" format="color|reference" />
-        <attr name="ads02Drawable" format="color|reference" />
-        <attr name="ads03Drawable" format="color|reference" />
-        <attr name="ads04Drawable" format="color|reference" />
-        <attr name="ads05Drawable" format="color|reference" />
-        <attr name="indicatorSelectedDrawable" format="color|reference"></attr>
-        <attr name="indicatorUnSelectedDrawable" format="color|reference"></attr>
+    <declare-styleable name="hyy_commlib_AdViewLayout">
+        <attr name="hyy_commlib_ads01Drawable" format="color|reference" />
+        <attr name="hyy_commlib_ads02Drawable" format="color|reference" />
+        <attr name="hyy_commlib_ads03Drawable" format="color|reference" />
+        <attr name="hyy_commlib_ads04Drawable" format="color|reference" />
+        <attr name="hyy_commlib_ads05Drawable" format="color|reference" />
+        <attr name="hyy_commlib_indicatorSelectedDrawable" format="color|reference"></attr>
+        <attr name="hyy_commlib_indicatorUnSelectedDrawable" format="color|reference"></attr>
 
     </declare-styleable>
 </resources>

@@ -1,67 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="drop_down_list_header_progress_bar_style">
-        <item name="android:minHeight">@dimen/drop_down_list_header_progress_bar_height</item>
-        <item name="android:maxHeight">@dimen/drop_down_list_header_progress_bar_height</item>
+    <style name="hyy_commlib_drop_down_list_header_progress_bar_style">
+        <item name="android:minHeight">@dimen/hyy_commlib_drop_down_list_header_progress_bar_height</item>
+        <item name="android:maxHeight">@dimen/hyy_commlib_drop_down_list_header_progress_bar_height</item>
     </style>
 
-    <style name="drop_down_list_footer_progress_bar_style">
-        <item name="android:minHeight">@dimen/drop_down_list_footer_progress_bar_height</item>
-        <item name="android:maxHeight">@dimen/drop_down_list_footer_progress_bar_height</item>
+    <style name="hyy_commlib_drop_down_list_footer_progress_bar_style">
+        <item name="android:minHeight">@dimen/hyy_commlib_drop_down_list_footer_progress_bar_height</item>
+        <item name="android:maxHeight">@dimen/hyy_commlib_drop_down_list_footer_progress_bar_height</item>
     </style>
 
-    <style name="drop_down_list_header_font_style">
-        <item name="android:textColor">@color/drop_down_list_header_font_color</item>
+    <style name="hyy_commlib_drop_down_list_header_font_style">
+        <item name="android:textColor">@color/hyy_commlib_drop_down_list_header_font_color</item>
         <item name="android:textAppearance">?android:attr/textAppearanceMedium</item>
     </style>
 
-    <style name="drop_down_list_header_second_font_style">
-        <item name="android:textColor">@color/drop_down_list_header_second_font_color</item>
+    <style name="hyy_commlib_drop_down_list_header_second_font_style">
+        <item name="android:textColor">@color/hyy_commlib_drop_down_list_header_second_font_color</item>
         <item name="android:textAppearance">?android:attr/textAppearanceSmall</item>
     </style>
 
-    <style name="drop_down_list_footer_font_style">
-        <item name="android:textColor">@color/drop_down_list_footer_font_color</item>
+    <style name="hyy_commlib_drop_down_list_footer_font_style">
+        <item name="android:textColor">@color/hyy_commlib_drop_down_list_footer_font_color</item>
         <item name="android:textAppearance">?android:attr/textAppearanceMedium</item>
     </style>
 
 
-    <style name="text_18_ffffff">
+    <style name="hyy_commlib_text_18_ffffff">
         <item name="android:textSize">18.0dip</item>
         <item name="android:textColor">#ffffffff</item>
     </style>
 
-    <style name="text_16_666666">
+    <style name="hyy_commlib_text_16_666666">
         <item name="android:textSize">16.0dip</item>
         <item name="android:textColor">#ff666666</item>
     </style>
 
-    <style name="sdw_white">
+    <style name="hyy_commlib_sdw_white">
         <item name="android:shadowColor">#7fffffff</item>
         <item name="android:shadowDx">0.0</item>
         <item name="android:shadowDy">0.65</item>
         <item name="android:shadowRadius">1.0</item>
     </style>
 
-    <style name="sdw_79351b">
+    <style name="hyy_commlib_sdw_79351b">
         <item name="android:shadowColor">#ff79351b</item>
         <item name="android:shadowDx">0.0</item>
         <item name="android:shadowDy">1.0</item>
         <item name="android:shadowRadius">1.0</item>
     </style>
 
-    <style name="text_15_ffffff_sdw" parent="@style/sdw_79351b">
+    <style name="hyy_commlib_text_15_ffffff_sdw" parent="@style/hyy_commlib_sdw_79351b">
         <item name="android:textSize">15.0dip</item>
         <item name="android:textColor">#ffffffff</item>
     </style>
 
-    <style name="text_15_666666_sdw" parent="@style/sdw_white">
+    <style name="hyy_commlib_text_15_666666_sdw" parent="@style/hyy_commlib_sdw_white">
         <item name="android:textSize">15.0dip</item>
         <item name="android:textColor">#ff666666</item>
     </style>
 
-    <style name="Dialog" parent="android:style/Theme.Dialog">
+    <style name="hyy_commlib_Dialog" parent="android:style/Theme.Dialog">
         <item name="android:background">#00000000</item>
         <item name="android:windowBackground">@android:color/transparent</item>
         <item name="android:windowNoTitle">true</item>

@@ -1,13 +1,12 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 23
-    buildToolsVersion "23.0.2"
+    compileSdkVersion 28
 
     defaultConfig {
         applicationId "hyy.com.dropdownlistviewdemo"
-        minSdkVersion 15
-        targetSdkVersion 22
+        minSdkVersion 21
+        targetSdkVersion 28
         versionCode 1
         versionName "1.0"
     }
@@ -20,12 +19,11 @@ android {
 }
 
 dependencies {
-    compile fileTree(include: ['*.jar'], dir: 'libs')
-    compile(project(':hyy-android-common-lib')) {
-        exclude group: 'com.android.support', module: 'appcompat-v7'
-    }
-    compile 'com.android.support:appcompat-v7:23.4.0'
-    compile 'com.android.support:design:23.4.0'
-    compile 'com.android.support:support-v4:23.4.0'
-    compile 'com.jakewharton:butterknife:7.0.1'
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation project(path: ':hyy-android-common-lib')
+    implementation 'com.android.support:appcompat-v7:28.0.0'
+    implementation 'com.android.support:design:28.0.0'
+    implementation 'com.android.support:support-v4:28.0.0'
+    implementation 'com.jakewharton:butterknife:8.8.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
 }

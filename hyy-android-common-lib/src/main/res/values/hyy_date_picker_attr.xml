@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <declare-styleable name="hyyDatePicker">
-        <attr name="dpBgColor" format="color|reference" />
-        <attr name="useYear" format="boolean" />
-        <attr name="useMonth" format="boolean" />
-        <attr name="useDay" format="boolean" />
+    <declare-styleable name="hyy_commlib_hyyDatePicker">
+        <attr name="hyy_commlib_dpBgColor" format="color|reference" />
+        <attr name="hyy_commlib_useYear" format="boolean" />
+        <attr name="hyy_commlib_useMonth" format="boolean" />
+        <attr name="hyy_commlib_useDay" format="boolean" />
     </declare-styleable>
     
 </resources>

@@ -89,7 +89,7 @@ public class CheckBoxSingleGroup extends LinearLayout {
         for(CheckBoxItem cbi:innerList){
             CheckBox cb = new CheckBox(context);
             cb.setText(cbi.getDis());
-            cb.setTag(R.id.tag_ix,cbi.getIndex());
+            cb.setTag(R.id.hyy_commlib_tag_ix,cbi.getIndex());
 
             if(null!= innerListener){
                 cb.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
@@ -98,7 +98,7 @@ public class CheckBoxSingleGroup extends LinearLayout {
 
                         boolean needReset = false;
 
-                        int index = (int)((CheckBox)buttonView).getTag(R.id.tag_ix);
+                        int index = (int)((CheckBox)buttonView).getTag(R.id.hyy_commlib_tag_ix);
 
                         if(lastCheckedIX != -1 && lastCheckedIX !=index && !isChecked){
                             //not init value,and not selected value
@@ -146,7 +146,7 @@ public class CheckBoxSingleGroup extends LinearLayout {
 
     private void resetExceptIx(int ix){
         for(CheckBox cb:innerListView){
-            int index = (int)cb.getTag(R.id.tag_ix);
+            int index = (int)cb.getTag(R.id.hyy_commlib_tag_ix);
             if(ix == index){
                 continue;
             }else {

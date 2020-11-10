@@ -80,55 +80,55 @@ public class AdViewLayout extends RelativeLayout {
 
         // Load attributes
         final TypedArray a = getContext().obtainStyledAttributes(
-                attrs, R.styleable.AdViewLayout, defStyle, 0);
+                attrs, R.styleable.hyy_commlib_AdViewLayout, defStyle, 0);
 
         //init ad01
-        if (a.hasValue(R.styleable.AdViewLayout_ads01Drawable)) {
+        if (a.hasValue(R.styleable.hyy_commlib_AdViewLayout_hyy_commlib_ads01Drawable)) {
             ad01Drawable = a.getDrawable(
-                    R.styleable.AdViewLayout_ads01Drawable);
+                    R.styleable.hyy_commlib_AdViewLayout_hyy_commlib_ads01Drawable);
 
         }
 
         //init ad02
-        if (a.hasValue(R.styleable.AdViewLayout_ads02Drawable)) {
+        if (a.hasValue(R.styleable.hyy_commlib_AdViewLayout_hyy_commlib_ads02Drawable)) {
             ad02Drawable = a.getDrawable(
-                    R.styleable.AdViewLayout_ads02Drawable);
+                    R.styleable.hyy_commlib_AdViewLayout_hyy_commlib_ads02Drawable);
 
         }
 
         //init ad03
-        if (a.hasValue(R.styleable.AdViewLayout_ads03Drawable)) {
+        if (a.hasValue(R.styleable.hyy_commlib_AdViewLayout_hyy_commlib_ads03Drawable)) {
             ad03Drawable = a.getDrawable(
-                    R.styleable.AdViewLayout_ads03Drawable);
+                    R.styleable.hyy_commlib_AdViewLayout_hyy_commlib_ads03Drawable);
 
         }
 
         //init ad04
-        if (a.hasValue(R.styleable.AdViewLayout_ads04Drawable)) {
+        if (a.hasValue(R.styleable.hyy_commlib_AdViewLayout_hyy_commlib_ads04Drawable)) {
             ad04Drawable = a.getDrawable(
-                    R.styleable.AdViewLayout_ads04Drawable);
+                    R.styleable.hyy_commlib_AdViewLayout_hyy_commlib_ads04Drawable);
 
         }
 
         //init ad05
-        if (a.hasValue(R.styleable.AdViewLayout_ads05Drawable)) {
+        if (a.hasValue(R.styleable.hyy_commlib_AdViewLayout_hyy_commlib_ads05Drawable)) {
             ad05Drawable = a.getDrawable(
-                    R.styleable.AdViewLayout_ads05Drawable);
+                    R.styleable.hyy_commlib_AdViewLayout_hyy_commlib_ads05Drawable);
 
         }
 
         //init indicator selected drawable
-        if (a.hasValue(R.styleable.AdViewLayout_indicatorSelectedDrawable)) {
-            indicatorSelectedDrawable = a.getDrawable(R.styleable.AdViewLayout_indicatorSelectedDrawable);
+        if (a.hasValue(R.styleable.hyy_commlib_AdViewLayout_hyy_commlib_indicatorSelectedDrawable)) {
+            indicatorSelectedDrawable = a.getDrawable(R.styleable.hyy_commlib_AdViewLayout_hyy_commlib_indicatorSelectedDrawable);
         } else {
-            indicatorSelectedDrawable = getResources().getDrawable(R.drawable.indicator_selected);
+            indicatorSelectedDrawable = getResources().getDrawable(R.drawable.hyy_commlib_indicator_selected);
         }
 
         //init indicator unselected drawable
-        if (a.hasValue(R.styleable.AdViewLayout_indicatorUnSelectedDrawable)) {
-            indicatorUnSelectedDrawable = a.getDrawable(R.styleable.AdViewLayout_indicatorUnSelectedDrawable);
+        if (a.hasValue(R.styleable.hyy_commlib_AdViewLayout_hyy_commlib_indicatorUnSelectedDrawable)) {
+            indicatorUnSelectedDrawable = a.getDrawable(R.styleable.hyy_commlib_AdViewLayout_hyy_commlib_indicatorUnSelectedDrawable);
         } else {
-            indicatorUnSelectedDrawable = getResources().getDrawable(R.drawable.indicator_unselected);
+            indicatorUnSelectedDrawable = getResources().getDrawable(R.drawable.hyy_commlib_indicator_unselected);
         }
 
 

@@ -11,17 +11,17 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:background="@drawable/dialog_body_bg"
+        android:background="@drawable/hyy_commlib_dialog_body_bg"
         android:orientation="vertical" >
 
         <TextView
             android:id="@+id/title"
-            style="@style/text_18_ffffff"
+            style="@style/hyy_commlib_text_18_ffffff"
             android:layout_width="fill_parent"
             android:layout_height="60.0dip"
-            android:background="@drawable/dialog_title_bg"
+            android:background="@drawable/hyy_commlib_dialog_title_bg"
             android:gravity="center"
-            android:text="@string/title_alert"
+            android:text="@string/hyy_commlib_title_alert"
             android:visibility="visible" />
 
         <LinearLayout
@@ -34,10 +34,10 @@
                 android:id="@+id/date_picker"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                timepicker:dpBgColor="@color/white"
-                timepicker:useYear ="true"
-                timepicker:useMonth ="true"
-                timepicker:useDay ="true"
+                timepicker:hyy_commlib_dpBgColor="@color/hyy_commlib_white"
+                timepicker:hyy_commlib_useYear ="true"
+                timepicker:hyy_commlib_useMonth ="true"
+                timepicker:hyy_commlib_useDay ="true"
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="5dp"/>
 
@@ -66,28 +66,28 @@
             android:layout_width="fill_parent"
             android:layout_height="60.0dip"
             android:layout_gravity="bottom"
-            android:background="@drawable/dialog_bottom_bg"
+            android:background="@drawable/hyy_commlib_dialog_bottom_bg"
             android:gravity="center"
             android:orientation="horizontal" >
 
             <Button
                 android:id="@+id/positiveButton"
-                style="@style/text_15_ffffff_sdw"
+                style="@style/hyy_commlib_text_15_ffffff_sdw"
                 android:layout_width="114.0dip"
                 android:layout_height="40.0dip"
-                android:background="@drawable/btn_ok_selector"
+                android:background="@drawable/hyy_commlib_btn_ok_selector"
                 android:gravity="center"
-                android:text="@string/ok" />
+                android:text="@string/hyy_commlib_ok" />
 
             <Button
                 android:id="@+id/negativeButton"
-                style="@style/text_15_666666_sdw"
+                style="@style/hyy_commlib_text_15_666666_sdw"
                 android:layout_width="114.0dip"
                 android:layout_height="40.0dip"
                 android:layout_marginLeft="20.0dip"
-                android:background="@drawable/btn_cancel_selector"
+                android:background="@drawable/hyy_commlib_btn_cancel_selector"
                 android:gravity="center"
-                android:text="@string/cancel" />
+                android:text="@string/hyy_commlib_cancel" />
         </LinearLayout>
     </LinearLayout>
 

@@ -69,26 +69,26 @@ public class HyyDatePicker extends RelativeLayout {
         // TODO Auto-generated method stub
         // Load attributes
         final TypedArray a = getContext().obtainStyledAttributes(attrs,
-                R.styleable.hyyDatePicker, defStyle, 0);
+                R.styleable.hyy_commlib_hyyDatePicker, defStyle, 0);
 
         // init bgColor
-        if (a.hasValue(R.styleable.hyyDatePicker_dpBgColor)) {
-            bgColor = a.getDrawable(R.styleable.hyyDatePicker_dpBgColor);
+        if (a.hasValue(R.styleable.hyy_commlib_hyyDatePicker_hyy_commlib_dpBgColor)) {
+            bgColor = a.getDrawable(R.styleable.hyy_commlib_hyyDatePicker_hyy_commlib_dpBgColor);
         }
 
         // init useYear
-        if (a.hasValue(R.styleable.hyyDatePicker_useYear)) {
-            useYear = a.getBoolean(R.styleable.hyyDatePicker_useYear, true);
+        if (a.hasValue(R.styleable.hyy_commlib_hyyDatePicker_hyy_commlib_useYear)) {
+            useYear = a.getBoolean(R.styleable.hyy_commlib_hyyDatePicker_hyy_commlib_useYear, true);
         }
 
         // init useMonth
-        if (a.hasValue(R.styleable.hyyDatePicker_useMonth)) {
-            useMonth = a.getBoolean(R.styleable.hyyDatePicker_useMonth, true);
+        if (a.hasValue(R.styleable.hyy_commlib_hyyDatePicker_hyy_commlib_useMonth)) {
+            useMonth = a.getBoolean(R.styleable.hyy_commlib_hyyDatePicker_hyy_commlib_useMonth, true);
         }
 
         // init useDay
-        if (a.hasValue(R.styleable.hyyDatePicker_useDay)) {
-            useDay = a.getBoolean(R.styleable.hyyDatePicker_useDay, true);
+        if (a.hasValue(R.styleable.hyy_commlib_hyyDatePicker_hyy_commlib_useDay)) {
+            useDay = a.getBoolean(R.styleable.hyy_commlib_hyyDatePicker_hyy_commlib_useDay, true);
         }
 
 

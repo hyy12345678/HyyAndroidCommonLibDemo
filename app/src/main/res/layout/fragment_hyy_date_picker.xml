@@ -17,19 +17,19 @@
                 android:id="@+id/time_picker"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                timepicker:tpBgColor="@color/white"
-                timepicker:useHour = "true"
-                timepicker:useMinute = "true"
-                timepicker:useSecond = "true"/>
+                timepicker:hyy_commlib_tpBgColor="@color/hyy_commlib_white"
+                timepicker:hyy_commlib_useHour = "true"
+                timepicker:hyy_commlib_useMinute = "true"
+                timepicker:hyy_commlib_useSecond = "true"/>
 
             <com.hyy.android.common.view.HyyDatePicker
                 android:id="@+id/date_picker"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                timepicker:dpBgColor="@color/orange"
-                timepicker:useYear ="true"
-                timepicker:useMonth ="true"
-                timepicker:useDay ="true"
+                timepicker:hyy_commlib_dpBgColor="@color/hyy_commlib_orange"
+                timepicker:hyy_commlib_useYear ="true"
+                timepicker:hyy_commlib_useMonth ="true"
+                timepicker:hyy_commlib_useDay ="true"
                 android:layout_below="@id/time_picker"
                 android:layout_marginTop="10dp" />
 

@@ -1,0 +1,35 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- TODO: Update blank fragment layout -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingBottom="10dp"
+        android:paddingTop="10dp">
+
+        <ImageView
+            android:id="@+id/iv_pic"
+            android:layout_width="100dp"
+            android:layout_height="100dp" />
+
+        <Button
+            android:id="@+id/btn_camera_front"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="camera_front"/>
+
+        <Button
+            android:id="@+id/btn_camera_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="camera_back"/>
+
+
+    </LinearLayout>
+
+
+</FrameLayout>

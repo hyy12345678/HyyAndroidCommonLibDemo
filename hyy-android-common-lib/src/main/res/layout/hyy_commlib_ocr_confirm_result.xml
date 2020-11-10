@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (C) 2017 Baidu, Inc. All Rights Reserved.
+  -->
+<com.hyy.android.common.camera.OCRCameraLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:hyy_commlib_contentView="@+id/display_image_view"
+        app:hyy_commlib_leftDownView="@+id/cancel_button"
+        app:hyy_commlib_rightUpView="@+id/confirm_button">
+
+    <ImageView
+            android:id="@+id/display_image_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            app:srcCompat="@drawable/hyy_commlib_ocr_id_card_locator_front"/>
+
+    <ImageView
+            android:id="@+id/cancel_button"
+            android:layout_width="60dp"
+            android:layout_height="40dp"
+            android:padding="12dp"
+            android:src="@drawable/hyy_commlib_ocr_cancel"
+            android:layout_marginLeft="@dimen/hyy_commlib_camera_left_margin"
+            android:layout_marginStart="@dimen/hyy_commlib_camera_left_margin"
+            android:layout_marginBottom="@dimen/hyy_commlib_camera_bottom_margin"
+    />
+
+    <ImageView
+            android:id="@+id/confirm_button"
+            android:layout_width="60dp"
+            android:layout_height="40dp"
+            android:padding="12dp"
+            android:src="@drawable/hyy_commlib_ocr_confirm"
+            android:layout_marginRight="@dimen/hyy_commlib_camera_right_margin"
+            android:layout_marginEnd="@dimen/hyy_commlib_camera_right_margin"
+            android:layout_marginTop="@dimen/hyy_commlib_camera_top_margin"
+    />
+
+</com.hyy.android.common.camera.OCRCameraLayout>

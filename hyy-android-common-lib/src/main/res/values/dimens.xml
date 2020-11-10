@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <dimen name="drop_down_list_header_padding_top">12dp</dimen>
-    <dimen name="drop_down_list_header_padding_bottom">15dp</dimen>
-    <dimen name="drop_down_list_header_release_min_distance">20dp</dimen>
-    <dimen name="drop_down_list_header_progress_bar_height">36dp</dimen>
-    <dimen name="drop_down_list_footer_progress_bar_height">36dp</dimen>
-    <dimen name="drop_down_list_footer_button_margin_left">8dp</dimen>
-    <dimen name="drop_down_list_footer_button_height">48dp</dimen>
+    <dimen name="hyy_commlib_drop_down_list_header_padding_top">12dp</dimen>
+    <dimen name="hyy_commlib_drop_down_list_header_padding_bottom">15dp</dimen>
+    <dimen name="hyy_commlib_drop_down_list_header_release_min_distance">20dp</dimen>
+    <dimen name="hyy_commlib_drop_down_list_header_progress_bar_height">36dp</dimen>
+    <dimen name="hyy_commlib_drop_down_list_footer_progress_bar_height">36dp</dimen>
+    <dimen name="hyy_commlib_drop_down_list_footer_button_margin_left">8dp</dimen>
+    <dimen name="hyy_commlib_drop_down_list_footer_button_height">48dp</dimen>
 
 
 
     <!-- ads -->
-    <dimen name="firstpage_ad_height">180dp</dimen>
-    <dimen name="firstpage_ad_indicator_height">20dp</dimen>
-    <dimen name="firstpage_ad_indicator_padding">10dp</dimen>
+    <dimen name="hyy_commlib_firstpage_ad_height">180dp</dimen>
+    <dimen name="hyy_commlib_firstpage_ad_indicator_height">20dp</dimen>
+    <dimen name="hyy_commlib_firstpage_ad_indicator_padding">10dp</dimen>
 
 </resources>

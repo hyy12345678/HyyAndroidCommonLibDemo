@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <declare-styleable name="hyyTimePicker">
-        <attr name="tpBgColor" format="color|reference" />
-        <attr name="useHour" format="boolean" />
-        <attr name="useMinute" format="boolean" />
-        <attr name="useSecond" format="boolean" />
+    <declare-styleable name="hyy_commlib_hyyTimePicker">
+        <attr name="hyy_commlib_tpBgColor" format="color|reference" />
+        <attr name="hyy_commlib_useHour" format="boolean" />
+        <attr name="hyy_commlib_useMinute" format="boolean" />
+        <attr name="hyy_commlib_useSecond" format="boolean" />
     </declare-styleable>
     
 </resources>

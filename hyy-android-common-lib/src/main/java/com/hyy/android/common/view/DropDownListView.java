@@ -158,7 +158,7 @@ public class DropDownListView extends ListView implements AbsListView.OnScrollLi
         }
 
         headerReleaseMinDistance = context.getResources().getDimensionPixelSize(
-                R.dimen.drop_down_list_header_release_min_distance);
+                R.dimen.hyy_commlib_drop_down_list_header_release_min_distance);
         flipAnimation = new RotateAnimation(0, 180, RotateAnimation.RELATIVE_TO_SELF, 0.5f,
                 RotateAnimation.RELATIVE_TO_SELF, 0.5f);
         flipAnimation.setInterpolator(new LinearInterpolator());
@@ -170,10 +170,10 @@ public class DropDownListView extends ListView implements AbsListView.OnScrollLi
         reverseFlipAnimation.setDuration(250);
         reverseFlipAnimation.setFillAfter(true);
 
-        headerDefaultText = context.getString(R.string.drop_down_list_header_default_text);
-        headerPullText = context.getString(R.string.drop_down_list_header_pull_text);
-        headerReleaseText = context.getString(R.string.drop_down_list_header_release_text);
-        headerLoadingText = context.getString(R.string.drop_down_list_header_loading_text);
+        headerDefaultText = context.getString(R.string.hyy_commlib_drop_down_list_header_default_text);
+        headerPullText = context.getString(R.string.hyy_commlib_drop_down_list_header_pull_text);
+        headerReleaseText = context.getString(R.string.hyy_commlib_drop_down_list_header_release_text);
+        headerLoadingText = context.getString(R.string.hyy_commlib_drop_down_list_header_loading_text);
 
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         headerLayout = (RelativeLayout) inflater.inflate(R.layout.hyy_commlib_drop_down_list_header, this, false);
@@ -214,9 +214,9 @@ public class DropDownListView extends ListView implements AbsListView.OnScrollLi
             return;
         }
 
-        footerDefaultText = context.getString(R.string.drop_down_list_footer_default_text);
-        footerLoadingText = context.getString(R.string.drop_down_list_footer_loading_text);
-        footerNoMoreText = context.getString(R.string.drop_down_list_footer_no_more_text);
+        footerDefaultText = context.getString(R.string.hyy_commlib_drop_down_list_footer_default_text);
+        footerLoadingText = context.getString(R.string.hyy_commlib_drop_down_list_footer_loading_text);
+        footerNoMoreText = context.getString(R.string.hyy_commlib_drop_down_list_footer_no_more_text);
 
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         footerLayout = (RelativeLayout) inflater.inflate(R.layout.hyy_commlib_drop_down_list_footer, this, false);
@@ -953,10 +953,10 @@ public class DropDownListView extends ListView implements AbsListView.OnScrollLi
      * @param attrs
      */
     private void getAttrs(Context context, AttributeSet attrs) {
-        TypedArray ta = context.obtainStyledAttributes(attrs, R.styleable.drop_down_list_attr);
-        isDropDownStyle = ta.getBoolean(R.styleable.drop_down_list_attr_isDropDownStyle, false);
-        isOnBottomStyle = ta.getBoolean(R.styleable.drop_down_list_attr_isOnBottomStyle, false);
-        isAutoLoadOnBottom = ta.getBoolean(R.styleable.drop_down_list_attr_isAutoLoadOnBottom, false);
+        TypedArray ta = context.obtainStyledAttributes(attrs, R.styleable.hyy_commlib_drop_down_list_attr);
+        isDropDownStyle = ta.getBoolean(R.styleable.hyy_commlib_drop_down_list_attr_hyy_commlib_isDropDownStyle, false);
+        isOnBottomStyle = ta.getBoolean(R.styleable.hyy_commlib_drop_down_list_attr_hyy_commlib_isOnBottomStyle, false);
+        isAutoLoadOnBottom = ta.getBoolean(R.styleable.hyy_commlib_drop_down_list_attr_hyy_commlib_isAutoLoadOnBottom, false);
         ta.recycle();
     }
 }

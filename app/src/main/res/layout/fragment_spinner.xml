@@ -20,7 +20,7 @@
             android:layout_marginLeft="10dp"
             android:layout_weight="1"
             android:text="人员状态"
-            android:textColor="@color/gray"
+            android:textColor="@color/hyy_commlib_gray"
             android:textSize="14sp" />
 
         <Spinner

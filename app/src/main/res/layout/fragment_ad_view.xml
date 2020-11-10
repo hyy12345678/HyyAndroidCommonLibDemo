@@ -12,11 +12,11 @@
             android:id="@+id/layoutAd"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:ads01Drawable="@drawable/banner_firstpage_family"
-            app:ads02Drawable="@drawable/banner_firstpage_family"
-            app:ads03Drawable="@drawable/banner_firstpage_family"
-            app:indicatorSelectedDrawable="@drawable/dot_selected"
-            app:indicatorUnSelectedDrawable="@drawable/dot_unselected"/>
+            app:hyy_commlib_ads01Drawable="@drawable/banner_firstpage_family"
+            app:hyy_commlib_ads02Drawable="@drawable/banner_firstpage_family"
+            app:hyy_commlib_ads03Drawable="@drawable/banner_firstpage_family"
+            app:hyy_commlib_indicatorSelectedDrawable="@drawable/dot_selected"
+            app:hyy_commlib_indicatorUnSelectedDrawable="@drawable/dot_unselected"/>
 
     </RelativeLayout>
 

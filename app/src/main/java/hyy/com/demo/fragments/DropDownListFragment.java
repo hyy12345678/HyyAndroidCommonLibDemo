@@ -119,7 +119,7 @@ public class DropDownListFragment extends Fragment {
 
                 // should call onDropDownComplete function of DropDownListView at end of drop down complete.
                 SimpleDateFormat dateFormat = new SimpleDateFormat("MM-dd HH:mm:ss");
-                listView.onDropDownComplete(getString(R.string.update_at) + dateFormat.format(new Date()));
+                listView.onDropDownComplete(getString(R.string.hyy_commlib_update_at) + dateFormat.format(new Date()));
             } else {
                 moreDataCount++;
                 listItems.add("Added after on bottom");

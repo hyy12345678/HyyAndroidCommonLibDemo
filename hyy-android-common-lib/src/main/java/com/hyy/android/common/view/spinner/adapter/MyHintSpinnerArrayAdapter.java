@@ -62,7 +62,7 @@ public class MyHintSpinnerArrayAdapter<T> extends ArrayAdapter<T> {
 		tv.setGravity(Gravity.RIGHT);
         tv.setSingleLine();
 		tv.setEllipsize(TextUtils.TruncateAt.valueOf("MIDDLE"));
-		tv.setTextColor(mContext.getResources().getColor(R.color.black));
+		tv.setTextColor(mContext.getResources().getColor(R.color.hyy_commlib_black));
 		return convertView;
 	}
 

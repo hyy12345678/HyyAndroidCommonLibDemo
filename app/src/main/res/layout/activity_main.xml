@@ -54,6 +54,13 @@
                 android:layout_height="wrap_content"
                 android:text="spinner"/>
 
+            <Button
+                android:id="@+id/btn_camera"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="camera"/>
+
+
         </LinearLayout>
 
     </ScrollView>

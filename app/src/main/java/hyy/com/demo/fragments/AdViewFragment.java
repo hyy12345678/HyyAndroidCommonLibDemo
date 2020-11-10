@@ -23,8 +23,10 @@ import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 
-import butterknife.Bind;
+
+import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.Unbinder;
 import hyy.com.demo.constants.Constants;
 import hyy.com.dropdownlistviewdemo.R;
 
@@ -36,7 +38,7 @@ public class AdViewFragment extends Fragment {
     private View mView;
     private Activity mActivity;
 
-    @Bind(R.id.layoutAd)
+    @BindView(R.id.layoutAd)
     AdViewLayout layoutAd;
 
     //UIL
@@ -45,6 +47,8 @@ public class AdViewFragment extends Fragment {
     ImageLoadingListener animateFirstListener = new AnimateFirstDisplayListener();
 
     List<ImageView> list_iv_ads_main;
+
+    Unbinder unbinder;
 
     public AdViewFragment() {
         // Required empty public constructor
@@ -62,8 +66,8 @@ public class AdViewFragment extends Fragment {
 
         if (mView == null) {
             mView = inflater.inflate(R.layout.fragment_ad_view, container, false);
-            ButterKnife.bind(this,mView);
-            
+            unbinder = ButterKnife.bind(this,mView);
+
             init();
         }
 
@@ -122,7 +126,7 @@ public class AdViewFragment extends Fragment {
     @Override
     public void onDestroyView() {
         super.onDestroyView();
-        ButterKnife.unbind(this);
+        unbinder.unbind();
     }
 
 

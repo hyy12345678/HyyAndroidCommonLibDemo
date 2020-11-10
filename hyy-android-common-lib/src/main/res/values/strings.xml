@@ -1,20 +1,22 @@
 <resources>
-    <string name="drop_down_list_header_default_text">Click to refresh&#8230;</string>
-    <string name="drop_down_list_header_pull_text">Drop Down to refresh&#8230;</string>
-    <string name="drop_down_list_header_release_text">Release to refresh&#8230;</string>
-    <string name="drop_down_list_header_loading_text">Loading&#8230;</string>
-    <string name="drop_down_list_footer_default_text">More</string>
-    <string name="drop_down_list_footer_loading_text">Loading&#8230;</string>
-    <string name="drop_down_list_footer_no_more_text">No More</string>
+    <string name="hyy_commlib_drop_down_list_header_default_text">Click to refresh&#8230;</string>
+    <string name="hyy_commlib_drop_down_list_header_pull_text">Drop Down to refresh&#8230;</string>
+    <string name="hyy_commlib_drop_down_list_header_release_text">Release to refresh&#8230;</string>
+    <string name="hyy_commlib_drop_down_list_header_loading_text">Loading&#8230;</string>
+    <string name="hyy_commlib_drop_down_list_footer_default_text">More</string>
+    <string name="hyy_commlib_drop_down_list_footer_loading_text">Loading&#8230;</string>
+    <string name="hyy_commlib_drop_down_list_footer_no_more_text">No More</string>
 
-    <string name="image_content">Image</string>
+    <string name="hyy_commlib_image_content">Image</string>
 
-    <string name="update_at">updated at:&#160;</string>
+    <string name="hyy_commlib_update_at">updated at:&#160;</string>
 
 
-    <string name="title_alert">提示信息</string>
-    <string name="ok">确定</string>
-    <string name="cancel">取消</string>
+    <string name="hyy_commlib_title_alert">提示信息</string>
+    <string name="hyy_commlib_ok">确定</string>
+    <string name="hyy_commlib_cancel">取消</string>
+
+    <string name="hyy_commlib_camera_permission_required">本功能需要相机权限！</string>
 
 
 </resources>

@@ -1,14 +1,23 @@
 package hyy.com.demo;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
+import android.text.TextUtils;
 import android.view.Menu;
 import android.view.MenuItem;
+
+import com.hyy.android.common.camera.CameraActivity;
+
+import java.util.List;
 
 import hyy.com.demo.constants.Constants;
 import hyy.com.demo.fragments.AdViewFragment;
 import hyy.com.demo.fragments.AutoExtVGFragment;
+import hyy.com.demo.fragments.CameraFragment;
 import hyy.com.demo.fragments.DropDownListFragment;
 import hyy.com.demo.fragments.HyyDatePickerFragment;
 import hyy.com.demo.fragments.RegularFragment;
@@ -60,6 +69,11 @@ public class ContainerActivity extends AppCompatActivity {
 
                 break;
 
+            case Constants.TYPE_CAMERA:
+                fragment = CameraFragment.newInstance();
+
+                break;
+
             default:
                 break;
         }
@@ -91,5 +105,14 @@ public class ContainerActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        List<Fragment> fragments = getSupportFragmentManager().getFragments();
+        for (Fragment mFragment : fragments) {
+            mFragment.onActivityResult(requestCode, resultCode, data);
+        }
     }
 }

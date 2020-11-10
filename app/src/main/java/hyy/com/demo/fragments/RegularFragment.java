@@ -12,8 +12,10 @@ import com.hyy.android.common.data.SimpleSpinnerOption;
 
 import java.util.ArrayList;
 
-import butterknife.Bind;
+
+import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.Unbinder;
 import hyy.com.dropdownlistviewdemo.R;
 
 /**
@@ -23,9 +25,10 @@ public class RegularFragment extends Fragment {
 
     private View mView;
 
-    @Bind(R.id.ms_test)
+    @BindView(R.id.ms_test)
     MultiSpinner ms_test;
 
+    Unbinder unbinder;
 
     public RegularFragment() {
         // Required empty public constructor
@@ -41,7 +44,7 @@ public class RegularFragment extends Fragment {
 
         if (mView == null) {
             mView = inflater.inflate(R.layout.fragment_regular, container, false);
-            ButterKnife.bind(this,mView);
+            unbinder = ButterKnife.bind(this,mView);
 
             init();
         }
@@ -73,7 +76,7 @@ public class RegularFragment extends Fragment {
     @Override
     public void onDestroyView() {
         super.onDestroyView();
-        ButterKnife.unbind(this);
+        unbinder.unbind();
     }
 
 }

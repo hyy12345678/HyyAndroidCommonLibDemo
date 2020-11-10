@@ -70,26 +70,26 @@ public class HyyTimePicker extends RelativeLayout
 
         // Load attributes
         final TypedArray a = getContext().obtainStyledAttributes(attrs,
-                R.styleable.hyyTimePicker, defStyle, 0);
+                R.styleable.hyy_commlib_hyyTimePicker, defStyle, 0);
 
         // init bgColor
-        if (a.hasValue(R.styleable.hyyTimePicker_tpBgColor)) {
-            bgColor = a.getDrawable(R.styleable.hyyTimePicker_tpBgColor);
+        if (a.hasValue(R.styleable.hyy_commlib_hyyTimePicker_hyy_commlib_tpBgColor)) {
+            bgColor = a.getDrawable(R.styleable.hyy_commlib_hyyTimePicker_hyy_commlib_tpBgColor);
         }
 
         // init useHour
-        if (a.hasValue(R.styleable.hyyTimePicker_useHour)) {
-            useHour = a.getBoolean(R.styleable.hyyTimePicker_useHour, true);
+        if (a.hasValue(R.styleable.hyy_commlib_hyyTimePicker_hyy_commlib_useHour)) {
+            useHour = a.getBoolean(R.styleable.hyy_commlib_hyyTimePicker_hyy_commlib_useHour, true);
         }
 
         // init useMinute
-        if (a.hasValue(R.styleable.hyyTimePicker_useMinute)) {
-            useMinute = a.getBoolean(R.styleable.hyyTimePicker_useMinute, true);
+        if (a.hasValue(R.styleable.hyy_commlib_hyyTimePicker_hyy_commlib_useMinute)) {
+            useMinute = a.getBoolean(R.styleable.hyy_commlib_hyyTimePicker_hyy_commlib_useMinute, true);
         }
 
         // init useSecond
-        if (a.hasValue(R.styleable.hyyTimePicker_useSecond)) {
-            useSecond = a.getBoolean(R.styleable.hyyTimePicker_useSecond, true);
+        if (a.hasValue(R.styleable.hyy_commlib_hyyTimePicker_hyy_commlib_useSecond)) {
+            useSecond = a.getBoolean(R.styleable.hyy_commlib_hyyTimePicker_hyy_commlib_useSecond, true);
         }
 
 
