@@ -4,6 +4,7 @@ import android.app.ActionBar;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.support.v7.widget.AppCompatTextView;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -27,7 +28,7 @@ import java.util.Set;
 /**
  * Created by huangyy 17/10/26
  */
-public class MultiSpinner extends TextView implements View.OnClickListener,DialogInterface.OnClickListener{
+public class MultiSpinner extends AppCompatTextView implements View.OnClickListener,DialogInterface.OnClickListener{
 
     private ListView listView;
 
