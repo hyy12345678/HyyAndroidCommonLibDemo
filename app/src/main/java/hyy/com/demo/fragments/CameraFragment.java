@@ -9,6 +9,7 @@ import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
@@ -41,6 +42,8 @@ import hyy.com.dropdownlistviewdemo.R;
  * create an instance of this fragment.
  */
 public class CameraFragment extends Fragment {
+
+    private static final String TAG = CameraFragment.class.getSimpleName();
 
     public static final int REQUEST_CODE_CAMERA = 102;
 
@@ -100,6 +103,13 @@ public class CameraFragment extends Fragment {
                                         String filePath = FileUtil.getSaveFile(getActivity()).getAbsolutePath();
                                         Bitmap myBitmap = BitmapFactory.decodeFile(filePath);
                                         iv_pic.setImageBitmap(myBitmap);
+                                        Log.d(TAG, "onResutl:" + CONTENT_TYPE);
+                                    }
+
+                                    @Override
+                                    public void onCancel() {
+                                        iv_pic.setImageBitmap(null);
+                                        Log.d(TAG,"onCancel");
                                     }
                                 });
 
@@ -120,6 +130,12 @@ public class CameraFragment extends Fragment {
                                         String filePath = FileUtil.getSaveFile(getActivity()).getAbsolutePath();
                                         Bitmap myBitmap = BitmapFactory.decodeFile(filePath);
                                         iv_pic.setImageBitmap(myBitmap);
+                                        Log.d(TAG, "onResutl:" + CONTENT_TYPE);
+                                    }
+
+                                    public void onCancel() {
+                                        iv_pic.setImageBitmap(null);
+                                        Log.d(TAG,"onCancel");
                                     }
                                 });
             }

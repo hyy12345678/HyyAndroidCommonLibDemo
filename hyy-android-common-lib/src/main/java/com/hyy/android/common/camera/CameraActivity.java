@@ -538,4 +538,19 @@ public class CameraActivity extends Activity {
         super.onDestroy();
         this.doClear();
     }
+
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        if(null != IDCameraInterface){
+            runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    IDCameraInterface.onCancel();
+                }
+            });
+        }
+
+    }
 }
