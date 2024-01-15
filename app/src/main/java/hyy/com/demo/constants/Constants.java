@@ -12,6 +12,7 @@ public class Constants {
     public static final int TYPE_REGULAR = 5;
     public static final int TYPE_SPINNER = 6;
     public static final int TYPE_CAMERA = 7;
+    public static final int TYPE_TILES = 8;
 
 
     // 一堆图片链接

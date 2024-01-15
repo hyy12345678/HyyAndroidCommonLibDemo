@@ -22,6 +22,7 @@ import hyy.com.demo.fragments.DropDownListFragment;
 import hyy.com.demo.fragments.HyyDatePickerFragment;
 import hyy.com.demo.fragments.RegularFragment;
 import hyy.com.demo.fragments.SpinnerFragment;
+import hyy.com.demo.fragments.TilesFragment;
 import hyy.com.dropdownlistviewdemo.R;
 
 public class ContainerActivity extends AppCompatActivity {
@@ -71,6 +72,11 @@ public class ContainerActivity extends AppCompatActivity {
 
             case Constants.TYPE_CAMERA:
                 fragment = CameraFragment.newInstance();
+
+                break;
+
+            case Constants.TYPE_TILES:
+                fragment = TilesFragment.newInstance();
 
                 break;
 

@@ -32,6 +32,8 @@ public class MainActivity extends AppCompatActivity {
     Button btnSpinner;
     @BindView(R.id.btn_camera)
     Button btnCamera;
+    @BindView(R.id.btn_tiles)
+    Button btnTiles;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -111,6 +113,16 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent(MainActivity.this, ContainerActivity.class);
 
                 intent.putExtra("type", Constants.TYPE_CAMERA);
+                startActivity(intent);
+            }
+        });
+
+        btnTiles.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, ContainerActivity.class);
+
+                intent.putExtra("type", Constants.TYPE_TILES);
                 startActivity(intent);
             }
         });
