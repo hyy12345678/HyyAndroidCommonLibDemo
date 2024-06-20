@@ -99,14 +99,43 @@ public class TilesFragment extends Fragment {
                 Toast.makeText(getContext(),"xixi6",Toast.LENGTH_SHORT).show();
             }
         });
+        View tileView7 = generateTileView(getContext(), "xixi7", R.color.hyy_commlib_orange, new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getContext(),"xixi7",Toast.LENGTH_SHORT).show();
+            }
+        });
+        View tileView8 = generateTileView(getContext(), "xixi8", R.color.hyy_commlib_red, new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getContext(),"xixi8",Toast.LENGTH_SHORT).show();
+            }
+        });
+        View tileView9 = generateTileView(getContext(), "xixi9", R.color.hyy_commlib_blue, new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getContext(),"xixi9",Toast.LENGTH_SHORT).show();
+            }
+        });
+        View tileView10 = generateTileView(getContext(), "xixi10", R.color.hyy_commlib_green, new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getContext(),"xixi10",Toast.LENGTH_SHORT).show();
+            }
+        });
 
 
-        tilesViewGroup.addView(tileView1, normalWidth, normalHeight * 2);
-        tilesViewGroup.addView(tileView2, normalWidth, normalHeight);
-        tilesViewGroup.addView(tileView3, normalWidth * 2, normalHeight);
-        tilesViewGroup.addView(tileView4, normalWidth, normalHeight);
+        tilesViewGroup.addView(tileView1, normalWidth, normalHeight);
+        tilesViewGroup.addView(tileView2, normalWidth, normalHeight * 2);
+        tilesViewGroup.addView(tileView3, normalWidth, normalHeight);
+        tilesViewGroup.addView(tileView4, normalWidth * 2, normalHeight);
         tilesViewGroup.addView(tileView5, normalWidth, normalHeight * 2);
         tilesViewGroup.addView(tileView6, normalWidth, normalHeight);
+        tilesViewGroup.addView(tileView7, normalWidth, normalHeight);
+
+        tilesViewGroup.addView(tileView8, normalWidth, normalHeight);
+        tilesViewGroup.addView(tileView9, normalWidth, normalHeight * 2);
+        tilesViewGroup.addView(tileView10, normalWidth, normalHeight);
 
 
         return view;

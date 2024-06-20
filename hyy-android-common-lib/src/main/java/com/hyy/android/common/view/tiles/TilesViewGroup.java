@@ -43,10 +43,10 @@ public class TilesViewGroup extends ViewGroup {
                 int childHeight = child.getMeasuredHeight();
 
 
-                if (injectWidth + childWidth <= wholeWidth) {
+                if (injectWidth + childWidth <= wholeWidth
+                        && latestHigh.getX() < injectWidth ) {
                     //不需要换行
-
-                    if (childHeight + latestLow.getY() >= latestHigh.getY()) {
+                    if (childHeight + latestLow.getY() > latestHigh.getY()) {
                         //inject给High，Low变成原来的High
                         int tempX = latestHigh.getX();
                         int tempY = latestHigh.getY();
@@ -75,7 +75,11 @@ public class TilesViewGroup extends ViewGroup {
                 } else {
                     //需要换行
                     //重置injectWidth到low的X
-                    injectWidth = latestLow.getX();
+                    if(latestHigh.getY() == latestLow.getY()){
+                        injectWidth = (latestHigh.getX()-latestLow.getX()>0)?latestLow.getX():latestHigh.getX();
+                    }else{
+                        injectWidth = latestLow.getX();
+                    }
 
 
                     //TODO 这里需要判别一下换行过去后，inject点能否放置下，即不会超过右边界
@@ -83,7 +87,8 @@ public class TilesViewGroup extends ViewGroup {
                     //TODO 情况1。injectWidth + child.width > wholeWidth 此时injectWidth重置为0
                     //TODO 这时需要高度从High开始插入，并且High，low要最后全归结到这个控件上
                     //TODO 情况2。injectWidth + child.width <= wholeWidth 正常插入，走原有逻辑
-                    if (injectWidth + childWidth > wholeWidth) {
+                    if (injectWidth + childWidth > wholeWidth
+                            || childWidth == wholeWidth) {
                         //情况1
                         injectWidth = 0;
                         latestHigh.setX(injectWidth);
@@ -97,7 +102,7 @@ public class TilesViewGroup extends ViewGroup {
 
                     } else {
                         //情况2
-                        if (childHeight + latestLow.getY() >= latestHigh.getY()) {
+                        if (childHeight + latestLow.getY() > latestHigh.getY()) {
                             //inject给High，Low变成原来的High
                             int tempX = latestHigh.getX();
                             int tempY = latestHigh.getY();
@@ -157,10 +162,10 @@ public class TilesViewGroup extends ViewGroup {
                 int childHeight = child.getMeasuredHeight();
 
 
-                if (injectWidth + childWidth <= wholeWidth) {
+                if (injectWidth + childWidth <= wholeWidth
+                    && latestHigh.getX() < injectWidth) {
                     //不需要换行
-
-                    if (childHeight + latestLow.getY() >= latestHigh.getY()) {
+                    if (childHeight + latestLow.getY() > latestHigh.getY()) {
                         //inject给High，Low变成原来的High
                         int tempX = latestHigh.getX();
                         int tempY = latestHigh.getY();
@@ -180,7 +185,11 @@ public class TilesViewGroup extends ViewGroup {
                 } else {
                     //需要换行
                     //重置injectWidth到low的X
-                    injectWidth = latestLow.getX();
+                    if(latestHigh.getY() == latestLow.getY()){
+                        injectWidth = (latestHigh.getX()-latestLow.getX()>0)?latestLow.getX():latestHigh.getX();
+                    }else{
+                        injectWidth = latestLow.getX();
+                    }
 
                     //TODO 这里需要判别一下换行过去后，inject点能否放置下，即不会超过右边界
                     //TODO 这里又分几种情况
@@ -188,7 +197,8 @@ public class TilesViewGroup extends ViewGroup {
                     //TODO 这时需要高度从High开始插入，并且High，low要最后全归结到这个控件上
                     //TODO 情况2。injectWidth + child.width <= wholeWidth 正常插入，走原有逻辑
 
-                    if (injectWidth + childWidth > wholeWidth) {
+                    if (injectWidth + childWidth > wholeWidth
+                            || childWidth == wholeWidth) {
                         //情况1
                         injectWidth = 0;
                         latestHigh.setX(injectWidth);
@@ -198,7 +208,7 @@ public class TilesViewGroup extends ViewGroup {
 
                     } else {
                         //情况2
-                        if (childHeight + latestLow.getY() >= latestHigh.getY()) {
+                        if (childHeight + latestLow.getY() > latestHigh.getY()) {
 
                             //inject给High，Low变成原来的High
                             int tempX = latestHigh.getX();
