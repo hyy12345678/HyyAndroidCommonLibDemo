@@ -2,7 +2,7 @@
 package com.hyy.android.common.camera;
 
 import android.graphics.Rect;
-import android.support.annotation.IntDef;
+import androidx.annotation.IntDef;
 import android.view.View;
 
 import java.util.concurrent.atomic.AtomicBoolean;

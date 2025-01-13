@@ -1,0 +1,60 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="hyy.com.demo.fragments.CaptchaFragment">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/captcha_group"
+            android:layout_width="300dp"
+            android:layout_height="200dp">
+
+            <ImageView
+                android:id="@+id/captchaImageView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/banner_firstpage_family"
+                android:scaleType="centerCrop"/>
+
+            <ImageView
+                android:id="@+id/captchaImageViewMask"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"/>
+
+            <com.hyy.android.common.view.SuperCircleView
+                android:id="@+id/circleView"
+                android:layout_width="300dp"
+                android:layout_height="200dp"
+                android:layout_centerInParent="true"
+                app:ring_width="10"
+                app:min_circle_radio="100"
+                app:ring_normal_color="#667c7c7c"/>
+
+        </RelativeLayout>
+
+
+
+        <SeekBar
+            android:id="@+id/rotationSeekBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:max="360"
+            android:progress="0"/>
+
+
+
+
+
+    </LinearLayout>
+
+
+
+</RelativeLayout>

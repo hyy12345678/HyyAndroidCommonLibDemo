@@ -3,8 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/HyyAndroidCommonLibDemo.iml" filepath="$PROJECT_DIR$/HyyAndroidCommonLibDemo.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/hyy-android-common-lib/hyy-android-common-lib.iml" filepath="$PROJECT_DIR$/hyy-android-common-lib/hyy-android-common-lib.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/HyyAndroidCommonLibDemo.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/HyyAndroidCommonLibDemo.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/hyy-android-common-lib/HyyAndroidCommonLibDemo.hyy-android-common-lib.iml" filepath="$PROJECT_DIR$/.idea/modules/hyy-android-common-lib/HyyAndroidCommonLibDemo.hyy-android-common-lib.iml" />
     </modules>
   </component>
 </project>

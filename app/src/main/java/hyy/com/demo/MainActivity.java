@@ -3,7 +3,7 @@ package hyy.com.demo;
 import android.content.Intent;
 import android.os.Bundle;
 
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -34,6 +34,9 @@ public class MainActivity extends AppCompatActivity {
     Button btnCamera;
     @BindView(R.id.btn_tiles)
     Button btnTiles;
+
+    @BindView(R.id.btn_captcha)
+    Button btnCaptcha;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -123,6 +126,16 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent(MainActivity.this, ContainerActivity.class);
 
                 intent.putExtra("type", Constants.TYPE_TILES);
+                startActivity(intent);
+            }
+        });
+
+        btnCaptcha.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, ContainerActivity.class);
+
+                intent.putExtra("type", Constants.TYPE_CAPTCHA);
                 startActivity(intent);
             }
         });

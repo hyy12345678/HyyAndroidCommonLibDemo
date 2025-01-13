@@ -1,16 +1,14 @@
 package hyy.com.demo;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
-import android.support.v7.app.AppCompatActivity;
-import android.text.TextUtils;
+
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+import androidx.appcompat.app.AppCompatActivity;
+
 import android.view.Menu;
 import android.view.MenuItem;
-
-import com.hyy.android.common.camera.CameraActivity;
 
 import java.util.List;
 
@@ -18,6 +16,7 @@ import hyy.com.demo.constants.Constants;
 import hyy.com.demo.fragments.AdViewFragment;
 import hyy.com.demo.fragments.AutoExtVGFragment;
 import hyy.com.demo.fragments.CameraFragment;
+import hyy.com.demo.fragments.CaptchaFragment;
 import hyy.com.demo.fragments.DropDownListFragment;
 import hyy.com.demo.fragments.HyyDatePickerFragment;
 import hyy.com.demo.fragments.RegularFragment;
@@ -80,11 +79,15 @@ public class ContainerActivity extends AppCompatActivity {
 
                 break;
 
+            case Constants.TYPE_CAPTCHA:
+                fragment = CaptchaFragment.newInstance();
+                break;
+
             default:
                 break;
         }
 
-        if(null != fragment){
+        if (null != fragment) {
             getSupportFragmentManager().beginTransaction().replace(R.id.container, fragment).commit();
         }
 

@@ -3,7 +3,7 @@ package hyy.com.demo.fragments;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
+import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
@@ -14,7 +14,6 @@ import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-import com.hyy.android.common.view.checkbox.CheckBoxSingleGroup;
 import com.hyy.android.common.view.spinner.SpinnerItem;
 import com.hyy.android.common.view.spinner.adapter.MyHintSpinnerArrayAdapter;
 

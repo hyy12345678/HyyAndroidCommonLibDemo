@@ -1,7 +1,7 @@
 package com.hyy.android.common.listener;
 
 import android.graphics.drawable.Drawable;
-import android.support.v4.view.ViewPager.OnPageChangeListener;
+import androidx.viewpager.widget.ViewPager.OnPageChangeListener;
 import android.view.View;
 import android.widget.ImageView;
 
