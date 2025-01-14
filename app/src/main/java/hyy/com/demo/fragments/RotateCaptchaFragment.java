@@ -18,6 +18,9 @@ import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.animation.GlideAnimation;
+import com.bumptech.glide.request.target.SimpleTarget;
 import com.hyy.android.common.view.RotateCaptchaViewGroup;
 import com.hyy.android.common.view.SuperCircleView;
 import com.hyy.android.common.view.callback.RotateCaptchaCallback;
@@ -70,17 +73,40 @@ public class RotateCaptchaFragment extends Fragment {
 
     private void initView() {
         rotateCaptchaViewGroup = mView.findViewById(R.id.rotateCaptchaViewGroup);
-        rotateCaptchaViewGroup.setImageResAndCallback2Show(
-                R.drawable.banner_firstpage_family,
-                new RotateCaptchaCallback() {
-                    @Override
-                    public void onPass() {
-                        onValidPass();
-                    }
 
+        //测试本地加载图片
+//        rotateCaptchaViewGroup.setImageResAndCallback2Show(
+//                R.drawable.banner_firstpage_family,
+//                new RotateCaptchaCallback() {
+//                    @Override
+//                    public void onPass() {
+//                        onValidPass();
+//                    }
+//
+//                    @Override
+//                    public void onUnPass() {
+//                        onValidUnPass();
+//                    }
+//                });
+
+        //测试网络加载图片
+        Glide.with(getActivity())
+                .load("http://hyylj.cn/wp-content/uploads/2024/04/7cf5fb8c273a0cd950e0481e0cd1f77c.jpeg")
+                .asBitmap()
+                .into(new SimpleTarget<Bitmap>() {
                     @Override
-                    public void onUnPass() {
-                        onValidUnPass();
+                    public void onResourceReady(Bitmap resource, GlideAnimation<? super Bitmap> glideAnimation) {
+                        rotateCaptchaViewGroup.setImageBitmapAndCallback2Show(resource, new RotateCaptchaCallback() {
+                            @Override
+                            public void onPass() {
+                                onValidPass();
+                            }
+
+                            @Override
+                            public void onUnPass() {
+                                onValidUnPass();
+                            }
+                        });
                     }
                 });
 

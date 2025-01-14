@@ -42,7 +42,8 @@ public class RotateCaptchaViewGroup extends RelativeLayout {
 
 
     private float mMatchDeviation = 10f;
-    private Random mRandom = new Random();;
+    private Random mRandom = new Random();
+    ;
     private int randomDegree;
 
 
@@ -132,7 +133,7 @@ public class RotateCaptchaViewGroup extends RelativeLayout {
 
                     paint.setAntiAlias(true);
 
-                    canvas.drawCircle(radius, radius, radius/2, paint);
+                    canvas.drawCircle(radius, radius, radius / 2, paint);
                     paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.SRC_IN));
 
                     canvas.drawBitmap(originBitmap, dripX, dripY, paint);
@@ -140,6 +141,7 @@ public class RotateCaptchaViewGroup extends RelativeLayout {
                     captchaImageViewMask.setImageBitmap(circularBitmap);
                     captchaImageViewMask.setRotation(randomDegree);
 
+                    circleView.setmMinRadio(radius / 2);
                     //------------------------handle captchaImageViewMask end--------------------------
 
 
@@ -157,7 +159,7 @@ public class RotateCaptchaViewGroup extends RelativeLayout {
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                 // Rotate the image based on the SeekBar's progress
 
-                int rDegree = progress *360/10000 + randomDegree;
+                int rDegree = progress * 360 / 10000 + randomDegree;
                 captchaImageViewMask.setRotation(rDegree);
 
             }
@@ -171,14 +173,14 @@ public class RotateCaptchaViewGroup extends RelativeLayout {
             public void onStopTrackingTouch(SeekBar seekBar) {
                 // Do something when the user stops interacting with the SeekBar
                 int progress = seekBar.getProgress();
-                int rDegree = progress *360/10000 + randomDegree;
+                int rDegree = progress * 360 / 10000 + randomDegree;
                 int gap = 360 - rDegree;
-                if(Math.abs(gap) < mMatchDeviation){
-                    if(null != callback){
+                if (Math.abs(gap) < mMatchDeviation) {
+                    if (null != callback) {
                         callback.onPass();
                     }
-                }else{
-                    if(null != callback){
+                } else {
+                    if (null != callback) {
                         callback.onUnPass();
                     }
                 }
@@ -186,20 +188,28 @@ public class RotateCaptchaViewGroup extends RelativeLayout {
         });
     }
 
-    public void setImageResAndCallback2Show(@DrawableRes int drawableRes,RotateCaptchaCallback callback){
+    public void setImageResAndCallback2Show(@DrawableRes int drawableRes, RotateCaptchaCallback callback) {
 
         this.callback = callback;
         captchaImageView.setImageDrawable(context.getDrawable(drawableRes));
 
-        initData();
-        initEvent();
+        restart();
+    }
+
+    public void setImageBitmapAndCallback2Show(Bitmap bitmap, RotateCaptchaCallback callback) {
+        this.callback = callback;
+        captchaImageView.setImageBitmap(bitmap);
+
+        restart();
     }
 
 
-    public void restart(){
+    public void restart() {
 
         rotationSeekBar.setProgress(0);
         initData();
         initEvent();
     }
+
+
 }

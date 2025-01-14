@@ -30,7 +30,6 @@
             android:layout_height="match_parent"
             android:layout_centerInParent="true"
             app:ring_width="10"
-            app:min_circle_radio="100"
             app:ring_normal_color="#667c7c7c"/>
 
     </RelativeLayout>

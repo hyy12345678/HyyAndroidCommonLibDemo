@@ -167,4 +167,10 @@ public class SuperCircleView extends View {
     }
 
 
+
+    public void setmMinRadio(int radio){
+        this.mMinRadio = radio;
+        invalidate();
+    }
+
 }
