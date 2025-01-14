@@ -14,6 +14,7 @@ public class Constants {
     public static final int TYPE_CAMERA = 7;
     public static final int TYPE_TILES = 8;
     public static final int TYPE_CAPTCHA = 9;
+    public static final int TYPE_ROTATE_CAPTCHA = 10;
 
 
     // 一堆图片链接

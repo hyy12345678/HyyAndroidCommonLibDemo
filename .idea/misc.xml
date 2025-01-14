@@ -5,6 +5,9 @@
       <map>
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.31145833333333334" />
         <entry key="app/src/main/res/layout/fragment_captcha.xml" value="0.27245949926362295" />
+        <entry key="app/src/main/res/layout/fragment_rotate_captcha.xml" value="0.1" />
+        <entry key="hyy-android-common-lib/src/main/res/layout/hyy_commlib_view_ad_header.xml" value="0.325" />
+        <entry key="hyy-android-common-lib/src/main/res/layout/hyy_commlib_view_rotate_captcha.xml" value="0.325" />
       </map>
     </option>
   </component>

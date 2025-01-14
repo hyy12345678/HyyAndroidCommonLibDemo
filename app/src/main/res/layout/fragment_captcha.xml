@@ -31,8 +31,8 @@
 
             <com.hyy.android.common.view.SuperCircleView
                 android:id="@+id/circleView"
-                android:layout_width="300dp"
-                android:layout_height="200dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:layout_centerInParent="true"
                 app:ring_width="10"
                 app:min_circle_radio="100"
@@ -41,17 +41,11 @@
         </RelativeLayout>
 
 
-
         <SeekBar
             android:id="@+id/rotationSeekBar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:max="360"
             android:progress="0"/>
-
-
-
-
 
     </LinearLayout>
 
