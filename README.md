@@ -15,6 +15,7 @@ hyy-android-common-lib
 - 日期时间选择
 - spinner
 - 采集身份证照片（包括正反面虚线辅助，相册选择图片缩放位置调整，闪光灯补光）
-- TilesViewGroup
+- TilesViewGroup（实现方案原理上有问题，不要使用，后续可能删除）
+- 旋转验证码组件（RotateCaptchaViewGroup）
 
 
