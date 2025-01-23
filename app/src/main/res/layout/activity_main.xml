@@ -78,6 +78,12 @@
                 android:layout_height="wrap_content"
                 android:text="rotateCaptcha"/>
 
+            <Button
+                android:id="@+id/btn_swipe_captcha"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="swipeCaptcha"/>
+
 
         </LinearLayout>
 

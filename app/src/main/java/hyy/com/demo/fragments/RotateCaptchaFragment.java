@@ -23,7 +23,6 @@ import com.bumptech.glide.request.animation.GlideAnimation;
 import com.bumptech.glide.request.target.SimpleTarget;
 import com.hyy.android.common.view.RotateCaptchaViewGroup;
 import com.hyy.android.common.view.SuperCircleView;
-import com.hyy.android.common.view.callback.RotateCaptchaCallback;
 
 import java.util.Random;
 
@@ -96,16 +95,17 @@ public class RotateCaptchaFragment extends Fragment {
                 .into(new SimpleTarget<Bitmap>() {
                     @Override
                     public void onResourceReady(Bitmap resource, GlideAnimation<? super Bitmap> glideAnimation) {
-                        rotateCaptchaViewGroup.setImageBitmapAndCallback2Show(resource, new RotateCaptchaCallback() {
+                        rotateCaptchaViewGroup.setImageBitmapAndCallback2Show(resource, new RotateCaptchaViewGroup.RotateCaptchaCallback() {
                             @Override
-                            public void onPass() {
+                            public void onPass(RotateCaptchaViewGroup rotateCaptchaViewGroup) {
                                 onValidPass();
                             }
 
                             @Override
-                            public void onUnPass() {
+                            public void onUnPass(RotateCaptchaViewGroup rotateCaptchaViewGroup) {
                                 onValidUnPass();
                             }
+
                         });
                     }
                 });

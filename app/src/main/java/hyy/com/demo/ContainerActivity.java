@@ -22,6 +22,7 @@ import hyy.com.demo.fragments.HyyDatePickerFragment;
 import hyy.com.demo.fragments.RegularFragment;
 import hyy.com.demo.fragments.RotateCaptchaFragment;
 import hyy.com.demo.fragments.SpinnerFragment;
+import hyy.com.demo.fragments.SwipeCaptchaFragment;
 import hyy.com.demo.fragments.TilesFragment;
 import hyy.com.dropdownlistviewdemo.R;
 
@@ -86,6 +87,10 @@ public class ContainerActivity extends AppCompatActivity {
 
             case Constants.TYPE_ROTATE_CAPTCHA:
                 fragment = RotateCaptchaFragment.newInstance();
+                break;
+
+            case Constants.TYPE_SWIPE_CAPTCHA:
+                fragment = SwipeCaptchaFragment.newInstance();
                 break;
 
             default:

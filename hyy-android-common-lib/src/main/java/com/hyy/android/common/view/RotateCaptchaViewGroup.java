@@ -23,7 +23,7 @@ import androidx.annotation.Nullable;
 import androidx.annotation.RawRes;
 
 import com.hyy.android.common.R;
-import com.hyy.android.common.view.callback.RotateCaptchaCallback;
+
 
 import java.util.Random;
 
@@ -42,7 +42,7 @@ public class RotateCaptchaViewGroup extends RelativeLayout {
 
 
     private float mMatchDeviation = 10f;
-    private Random mRandom = new Random();
+    private Random mRandom;
     ;
     private int randomDegree;
 
@@ -72,7 +72,11 @@ public class RotateCaptchaViewGroup extends RelativeLayout {
     private void init(AttributeSet attrs, int defStyle) {
 
         //TODO 解析xml中配置的属性值，目前不需要
+        //**Future do TypedArray analysis and recycled HERE**
+
         initView();
+
+        mRandom = new Random(System.nanoTime());
 
     }
 
@@ -88,6 +92,7 @@ public class RotateCaptchaViewGroup extends RelativeLayout {
         rotationSeekBar = rotateCaptchaView.findViewById(R.id.rotationSeekBar);
 
         this.addView(rotateCaptchaView);
+
 
     }
 
@@ -177,11 +182,11 @@ public class RotateCaptchaViewGroup extends RelativeLayout {
                 int gap = 360 - rDegree;
                 if (Math.abs(gap) < mMatchDeviation) {
                     if (null != callback) {
-                        callback.onPass();
+                        callback.onPass(RotateCaptchaViewGroup.this);
                     }
                 } else {
                     if (null != callback) {
-                        callback.onUnPass();
+                        callback.onUnPass(RotateCaptchaViewGroup.this);
                     }
                 }
             }
@@ -209,6 +214,13 @@ public class RotateCaptchaViewGroup extends RelativeLayout {
         rotationSeekBar.setProgress(0);
         initData();
         initEvent();
+    }
+
+
+    public interface RotateCaptchaCallback {
+
+        void onPass(RotateCaptchaViewGroup rotateCaptchaViewGroup);
+        void onUnPass(RotateCaptchaViewGroup rotateCaptchaViewGroup);
     }
 
 

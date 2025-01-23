@@ -41,6 +41,9 @@ public class MainActivity extends AppCompatActivity {
     @BindView(R.id.btn_rotate_captcha)
     Button btnRotateCaptcha;
 
+    @BindView(R.id.btn_swipe_captcha)
+    Button btnSwipeCaptcha;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -149,6 +152,16 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent(MainActivity.this, ContainerActivity.class);
 
                 intent.putExtra("type", Constants.TYPE_ROTATE_CAPTCHA);
+                startActivity(intent);
+            }
+        });
+
+        btnSwipeCaptcha.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, ContainerActivity.class);
+
+                intent.putExtra("type", Constants.TYPE_SWIPE_CAPTCHA);
                 startActivity(intent);
             }
         });
